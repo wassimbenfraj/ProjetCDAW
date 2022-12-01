@@ -16,8 +16,8 @@ use App\Http\Controllers\Controller;
 
 
 
-Route::get('/{title}', function (Request $request) {
-    return view('helloworld', ['title' => $request->title]);
-})->whereAlpha('title');
+Route::get('/', function (Request $request) {
+    return view('index');
+});
 
 
