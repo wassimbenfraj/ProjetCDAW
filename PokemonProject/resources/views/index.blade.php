@@ -133,8 +133,7 @@
     <div class="container">
         <div class="row row-reverce-sm align-items-center">
             <div class="col-lg-5 col-md-6 col-sm-12 mt_sm--50">
-                <h2 class="title" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">Discover Digital Art,
-                    Collect and Sell Your Specific NFTs.</h2>
+                <h2 class="title" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">Choisis ton Pokémon, et lance-toi dans un combat !</h2>
                 <p class="slide-disc" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">Partner with one
                     of the world’s largest retailers to showcase your brand and
                     products.</p>
@@ -329,7 +328,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_mobile--40">
                 <div class="footer-widget widget-quicklink">
-                    <h6 class="widget-title">Nuron</h6>
+                    <h6 class="widget-title">PokéGame</h6>
                     <ul class="footer-list-one">
                         <li class="single-list"><a href="#">Protocol Explore</a></li>
                         <li class="single-list"><a href="#">System Token</a></li>
