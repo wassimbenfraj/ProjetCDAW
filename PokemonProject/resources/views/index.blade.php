@@ -134,15 +134,13 @@
     <div class="container">
         <div class="row row-reverce-sm align-items-center">
             <div class="col-lg-5 col-md-6 col-sm-12 mt_sm--50">
-                <h2 class="title" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">Choisis ton Pokémon, et lance-toi dans un combat !</h2>
-                <p class="slide-disc" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">Partner with one
-                    of the world’s largest retailers to showcase your brand and
-                    products.</p>
+                <h2 class="title" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">Tu rêves d'être dresseur? Tu es au bon endroit !</h2>
+                <p class="slide-disc" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">Choisis ton pokémon, et challenge un autre joueur dans un combat !</p>
                 <div class="button-group">
                     <a class="btn btn-large btn-primary" href="#" data-sal-delay="400" data-sal="slide-up"
-                       data-sal-duration="800">Get Started</a>
+                       data-sal-duration="800">Se connecter</a>
                     <a class="btn btn-large btn-primary-alta" href="create.html" data-sal-delay="500"
-                       data-sal="slide-up" data-sal-duration="800">Create</a>
+                       data-sal="slide-up" data-sal-duration="800">Créer un compte</a>
                 </div>
             </div>
             <div class="col-lg-5 col-md-6 col-sm-12 offset-lg-1">
