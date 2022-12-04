@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Home Default || Nuron - NFT Marketplace Template</title>
+    <title>PokéGame - Accueil</title>
     <meta name="robots" content="noindex, follow"/>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -43,8 +43,8 @@
                     <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
                         <!-- Start Mainmanu Nav -->
                         <ul class="mainmenu">
-                            <li><a href="contact.html">Home</a></li>
-                            <li><a href="contact.html">Pokémons</a></li>
+                            <li><a href="contact.html">Accueil</a></li>
+                            <li><a href="contact.html">Pokémon</a></li>
                             <li><a href="contact.html">Combats</a></li>
                             <li><a href="contact.html">Stats</a></li>
                         </ul>
@@ -69,7 +69,7 @@
                     <div class="icon-box">
 
                         <a id="connectbtn" class="btn btn-primary-alta btn-small" href=""><i class="feather-user"></i>
-                            Sign in</a>
+                            Se connecter</a>
                     </div>
                 </div>
 
@@ -134,7 +134,7 @@
     <div class="container">
         <div class="row row-reverce-sm align-items-center">
             <div class="col-lg-5 col-md-6 col-sm-12 mt_sm--50">
-                <h2 class="title" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">Tu rêves d'être dresseur? Tu es au bon endroit !</h2>
+                <h2 class="title" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">Tu rêves d'être dresseur ? Tu es au bon endroit !</h2>
                 <p class="slide-disc" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">Choisis ton pokémon, et challenge un autre joueur dans un combat !</p>
                 <div class="button-group">
                     <a class="btn btn-large btn-primary" href="#" data-sal-delay="400" data-sal="slide-up"
@@ -159,19 +159,19 @@
         <div class="row align-items-center g-5">
             <div class="col-lg-4">
                 <div class="section-title">
-                    <h3 class="title mb--0">Explore Product</h3>
+                    <h3 class="title mb--0">Découvre tous les types de Pokémon !</h3>
                 </div>
             </div>
             <div class="col-lg-8">
                 <div
                     class="button-group isotop-filter filters-button-group d-flex justify-content-start justify-content-lg-end">
-                    <button data-filter="*" class="is-checked"><span class="filter-text">All</span></button>
-                    <button data-filter=".cat--1"><span class="filter-text">Art</span></button>
-                    <button data-filter=".cat--2"><span class="filter-text">Music</span></button>
-                    <button data-filter=".cat--3"><span class="filter-text">Vedio</span></button>
-                    <button data-filter=".cat--4"><span class="filter-text">Collectionable</span></button>
-                    <button data-filter=".cat--5"><span class="filter-text">Highest</span></button>
-                    <button data-filter=".cat--6"><span class="filter-text">Lowest</span></button>
+                    <button data-filter="*" class="is-checked"><span class="filter-text">Tous</span></button>
+                    <button data-filter=".cat--1"><span class="filter-text">Eau</span></button>
+                    <button data-filter=".cat--2"><span class="filter-text">Feu</span></button>
+                    <button data-filter=".cat--3"><span class="filter-text">Roche</span></button>
+                    <button data-filter=".cat--4"><span class="filter-text">Électrik</span></button>
+                    <button data-filter=".cat--5"><span class="filter-text">Ténèbres</span></button>
+                    <button data-filter=".cat--6"><span class="filter-text">Poison</span></button>
                 </div>
             </div>
         </div>
@@ -305,7 +305,7 @@
                                                                         alt="nft-logo"></a>
                         </div>
                         <p class="rn-footer-describe">
-                            Created with the collaboration of over 60 of the world's best Nuron Artists.
+                        Créé par une équipe de passionés de Pokémon.
                         </p>
                     </div>
                     <div class="widget-bottom mt--40 pt--40">
