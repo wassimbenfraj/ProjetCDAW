@@ -20,4 +20,10 @@ Route::get('/', function (Request $request) {
     return view('index');
 });
 
+Route::get('/pokemons', function (Request $request) {
+    return view('pokemons', [
+        'pokemons' => \App\Models\Pokemon::all()
+    ]);
+});
+
 
