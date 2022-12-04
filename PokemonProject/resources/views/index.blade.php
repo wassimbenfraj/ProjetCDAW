@@ -182,20 +182,12 @@
                 <div class="grid-metro-item cat--1 cat--3">
                     <div class="product-style-one no-overlay with-placeBid">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg"
+                            <a href="product-details.html"><img src="assets/images/portfolio/carapuce.png"
                                                                 alt="NFT_portfolio"></a>
-                            <a href="product-details.html" class="btn btn-primary">Place Bid</a>
+
                         </div>
                         <div class="product-share-wrapper">
-                            <div class="profile-share">
-                                <a href="author.html" class="avatar" data-tooltip="Owener:Mr.Jone-lee"><img
-                                        src="assets/images/client/client-2.png" alt="Nft_Profile"></a>
-                                <a href="author.html" class="avatar" data-tooltip="Owener:Mr.Jone-lee"><img
-                                        src="assets/images/client/client-3.png" alt="Nft_Profile"></a>
-                                <a href="author.html" class="avatar" data-tooltip="Owener:Mr.Jone-lee"><img
-                                        src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                <a class="more-author-text" href="#">20+ Place Bit.</a>
-                            </div>
+
                             <div class="share-btn share-btn-activation dropdown">
                                 <button class="icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <svg viewBox="0 0 14 4" fill="none" width="16" height="16"
@@ -219,10 +211,11 @@
 
                             </div>
                         </div>
-                        <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                        <span class="latest-bid">Highest bid 1/20</span>
+                        <a href="product-details.html"><span class="product-name">Carapuce</span></a>
+                        <span class="latest-bid">Carapuce est une petite tortue bipède de couleur bleue. Sa carapace lui sert à se protéger
+                            pour lancer ensuite des jets d'eau ou d'écume, mais aussi à améliorer son hydrodynamisme.</span>
                         <div class="bid-react-area">
-                            <div class="last-bid">0.244wETH</div>
+
                             <div class="react-area">
                                 <svg viewBox="0 0 17 16" fill="none" width="16" height="16"
                                      class="sc-bdnxRM sc-hKFxyN kBvkOu">
@@ -230,7 +223,7 @@
                                         d="M8.2112 14L12.1056 9.69231L14.1853 7.39185C15.2497 6.21455 15.3683 4.46116 14.4723 3.15121V3.15121C13.3207 1.46757 10.9637 1.15351 9.41139 2.47685L8.2112 3.5L6.95566 2.42966C5.40738 1.10976 3.06841 1.3603 1.83482 2.97819V2.97819C0.777858 4.36443 0.885104 6.31329 2.08779 7.57518L8.2112 14Z"
                                         stroke="currentColor" stroke-width="2"></path>
                                 </svg>
-                                <span class="number">322</span>
+
                             </div>
                         </div>
                     </div>
