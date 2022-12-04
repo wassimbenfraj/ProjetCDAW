@@ -235,55 +235,7 @@
 </div>
 <!-- end product area -->
 
-<!-- Modal -->
-<div class="rn-popup-modal share-modal-wrapper modal fade" id="shareModal" tabindex="-1" aria-hidden="true">
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i data-feather="x"></i></button>
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content share-wrapper">
-            <div class="modal-header share-area">
-                <h5 class="modal-title">Share this NFT</h5>
-            </div>
-            <div class="modal-body">
-                <ul class="social-share-default">
-                    <li><a href="#"><span class="icon"><i data-feather="facebook"></i></span><span
-                                class="text">facebook</span></a></li>
-                    <li><a href="#"><span class="icon"><i data-feather="twitter"></i></span><span
-                                class="text">twitter</span></a></li>
-                    <li><a href="#"><span class="icon"><i data-feather="linkedin"></i></span><span
-                                class="text">linkedin</span></a></li>
-                    <li><a href="#"><span class="icon"><i data-feather="instagram"></i></span><span class="text">instagram</span></a>
-                    </li>
-                    <li><a href="#"><span class="icon"><i data-feather="youtube"></i></span><span
-                                class="text">youtube</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal -->
-<div class="rn-popup-modal report-modal-wrapper modal fade" id="reportModal" tabindex="-1" aria-hidden="true">
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i data-feather="x"></i></button>
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content report-content-wrapper">
-            <div class="modal-header report-modal-header">
-                <h5 class="modal-title">Why are you reporting?
-                </h5>
-            </div>
-            <div class="modal-body">
-                <p>Describe why you think this item should be removed from marketplace</p>
-                <div class="report-form-box">
-                    <h6 class="title">Message</h6>
-                    <textarea name="message" placeholder="Write issues"></textarea>
-                    <div class="report-button">
-                        <button type="button" class="btn btn-primary mr--10 w-auto">Report</button>
-                        <button type="button" class="btn btn-primary-alta w-auto" data-bs-dismiss="modal">Cancel
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- Start Footer Area -->
 <div class="rn-footer-one rn-section-gap bg-color--1 mt--100 mt_md--80 mt_sm--80">
     <div class="container">
@@ -301,20 +253,7 @@
                         Créé par une équipe de passionés de Pokémon.
                         </p>
                     </div>
-                    <div class="widget-bottom mt--40 pt--40">
-                        <h6 class="title">Get The Latest Nuron Updates </h6>
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-color--2" placeholder="Your username"
-                                   aria-label="Recipient's username">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary-alta btn-outline-secondary" type="button">Subscribe
-                                </button>
-                            </div>
-                        </div>
-                        <div class="newsletter-dsc">
-                            <p>Email is safe. We don't spam.</p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
@@ -322,13 +261,12 @@
                 <div class="footer-widget widget-quicklink">
                     <h6 class="widget-title">PokéGame</h6>
                     <ul class="footer-list-one">
-                        <li class="single-list"><a href="#">Protocol Explore</a></li>
-                        <li class="single-list"><a href="#">System Token</a></li>
-                        <li class="single-list"><a href="#">Otimize Time</a></li>
-                        <li class="single-list"><a href="#">Visual Checking</a></li>
-                        <li class="single-list"><a href="#">Fadeup System</a></li>
-                        <li class="single-list"><a href="#">Activity Log</a></li>
-                        <li class="single-list"><a href="#">System Auto Since</a></li>
+                        <li class="single-list"><a href="#">Lance-toi dans un combat</a></li>
+                        <li class="single-list"><a href="#">Trouve ton Pokémon préféré</a></li>
+                        <li class="single-list"><a href="#">Stats des joueurs</a></li>
+                        <li class="single-list"><a href="#">Derniers combats</a></li>
+
+
                     </ul>
                 </div>
             </div>
@@ -337,60 +275,14 @@
                 <div class="footer-widget widget-information">
                     <h6 class="widget-title">Information</h6>
                     <ul class="footer-list-one">
-                        <li class="single-list"><a href="#">Market Explore</a></li>
-                        <li class="single-list"><a href="#">Ready Token</a></li>
-                        <li class="single-list"><a href="#">Main Option</a></li>
-                        <li class="single-list"><a href="#">Product Checking</a></li>
-                        <li class="single-list"><a href="blog.html">Blog Grid</a></li>
+
                         <li class="single-list"><a href="about.html">About Us</a></li>
-                        <li class="single-list"><a href="#">Fix Bug </a></li>
+
                     </ul>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--40 mt_sm--40">
-                <div class="footer-widget">
-                    <h6 class="widget-title">Recent Sold Out</h6>
-                    <ul class="footer-recent-post">
-                        <li class="recent-post">
-                            <div class="thumbnail">
-                                <a href="product-details.html">
-                                    <img src="assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h6 class="title"><a href="product-details.html">#21 The Wonder</a></h6>
-                                <p>Highest bid 1/20</p>
-                                <span class="price">0.244wETH</span>
-                            </div>
-                        </li>
-                        <li class="recent-post">
-                            <div class="thumbnail">
-                                <a href="product-details.html">
-                                    <img src="assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h6 class="title"><a href="product-details.html">Diamond Dog</a></h6>
-                                <p>Highest bid 1/20</p>
-                                <span class="price">0.022wETH</span>
-                            </div>
-                        </li>
-                        <li class="recent-post">
-                            <div class="thumbnail">
-                                <a href="product-details.html">
-                                    <img src="assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h6 class="title"><a href="product-details.html">Morgan11</a></h6>
-                                <p>Highest bid 1/20</p>
-                                <span class="price">0.892wETH</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
@@ -401,11 +293,8 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="copyright-left">
-                    <span>©2022 Nuron, Inc. All rights reserved.</span>
-                    <ul class="privacy">
-                        <li><a href="terms-condition.html">Terms</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
+                    <span>©2022 PokéGame, Inc. Tous les drois sont réservés.</span>
+
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12">
