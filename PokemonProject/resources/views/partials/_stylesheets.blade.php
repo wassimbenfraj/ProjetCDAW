@@ -1,5 +1,5 @@
-<!-- Favicon -->
-<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+<!-- icon -->
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/pokemon/icon.png">
 <!-- CSS
 ============================================ -->
 <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
