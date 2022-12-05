@@ -6,8 +6,8 @@
         <div class="header-inner">
             <div class="header-left">
                 <div class="logo-thumbnail logo-custom-css">
-                    <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                    <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png"
+                    <a class="logo-light" href="index.html"><img src="assets/images/pokemon/logo-white.png" alt="nft-logo"></a>
+                    <a class="logo-dark" href="index.html"><img src="assets/images/pokemon/logo-dark.png"
                                                                 alt="nft-logo"></a>
                 </div>
                 <div class="mainmenu-wrapper">

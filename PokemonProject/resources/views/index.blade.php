@@ -22,7 +22,7 @@
             </div>
             <div class="col-lg-5 col-md-6 col-sm-12 offset-lg-1">
                 <div class="slider-thumbnail">
-                    <img src="assets/images/slider/slider-1.png" alt="Slider Images">
+                    <img src="assets/images/pokemon/slider-1.png" alt="Slider Images">
                 </div>
             </div>
         </div>
