@@ -17,7 +17,9 @@ use App\Http\Controllers\Controller;
 
 
 Route::get('/', function (Request $request) {
-    return view('index');
+    return view('index', [
+        'pokemons' => \App\Models\Pokemon::all()
+    ]);
 });
 
 Route::get('/pokemons', function (Request $request) {

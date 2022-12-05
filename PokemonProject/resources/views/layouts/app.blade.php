@@ -22,7 +22,9 @@
 
  @include('partials._footer')
 
+
  @include('partials._scripts')
+ @yield('script')
 </body>
 
 </html>
