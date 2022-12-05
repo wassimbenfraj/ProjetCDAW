@@ -28,7 +28,7 @@
         </div>
     </div>
 </div>
-<!-- End banner area -->
+<!-- End banner areaa -->
 
 
     <div class="rn-product-area rn-section-gapTop masonary-wrapper-activation">

@@ -19,7 +19,7 @@
 <script src="assets/js/vendor/scrolltrigger.js"></script>
 <script src="assets/js/vendor/jquery.custom-file-input.js"></script>
 <script src="assets/js/vendor/savePopup.js"></script>
-<script src="assets/js/vendor/vanilla.tilt.js"></script>
+    <script src="assets/js/vendor/vanilla.tilt.js"></script>
 
 <!-- main JS -->
 <script src="assets/js/main.js"></script>

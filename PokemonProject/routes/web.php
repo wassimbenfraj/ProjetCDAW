@@ -23,6 +23,8 @@ Route::get('/', function (Request $request) {
 });
 
 Route::get('/pokemons', function (Request $request) {
+//    $postData = $request->post();
+//    dd($postData);
     return view('pokemons', [
         'pokemons' => \App\Models\Pokemon::all()
     ]);
