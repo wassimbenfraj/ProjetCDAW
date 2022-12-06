@@ -23,11 +23,11 @@ Route::get('/', function (Request $request) {
 });
 
 Route::get('/pokemons', function (Request $request) {
-//    $postData = $request->post();
-//    dd($postData);
     return view('pokemons', [
         'pokemons' => \App\Models\Pokemon::all()
     ]);
 });
+
+Route::post('/pokemons/sort','App\Http\Controllers\PokemonController@sortPokemons');
 
 

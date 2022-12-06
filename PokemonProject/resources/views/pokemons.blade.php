@@ -19,7 +19,7 @@
                             <label class="filter-leble">Trier</label>
                             <select id="order_list">
                                 <option value="0"></option>
-                                <option value="niveau">Niveau</option>
+                                <option value="level">Niveau</option>
                                 <option value="hp">Points De Vie</option>
                             </select>
                         </div>
@@ -42,7 +42,7 @@
 
             </div>
 
-            <div id="#ajax_load"  class="col-lg-12">
+            <div id="ajax_load"  class="col-lg-12">
                 @include('pokemon.listPokemon')
             </div>
         </div>

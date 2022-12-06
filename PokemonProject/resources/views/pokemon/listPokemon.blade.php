@@ -1,6 +1,7 @@
-<div class="grid-metro5 mesonry-list">
-    <div class="resizer"></div>
+<div class="grid-metro5 mesonry-list" >
+    <div class="resizer" ></div>
     @foreach($pokemons as $pokemon)
+
         <!-- start single product -->
         <div class="grid-metro-item {{$pokemon->energy}}">
             <div class="product-style-one no-overlay">
