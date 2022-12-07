@@ -10,7 +10,7 @@ class PokemonController extends Controller
 {
     public function sortPokemons(Request $request){
         $postData = $request->post();
-        $list = Pokemon::all()->sortBy([$request->type, 'asc']) ;
+        $list = Pokemon::all()->sortByDesc($request->type) ;
 
         return view('pokemon/listPokemon', [
             'pokemons' => $list

@@ -44,12 +44,14 @@ $(document).ready(function () {
                     console.log(1);
                     $("#ajax_load").html(data);
                     $("#mainscript").each(function () {
-                        var oldScript = this.getAttribute("src");
+                        var oldScriptSrc = this.getAttribute("src");
+                        var oldScriptId = this.getAttribute("id");
                         $(this).remove();
                         var newScript;
                         newScript = document.createElement('script');
                         newScript.type = 'text/javascript';
-                        newScript.src = oldScript;
+                        newScript.src = oldScriptSrc;
+                        newScript.id = oldScriptId;
                         document.getElementsByTagName("head")[0].appendChild(newScript);
                     });
 

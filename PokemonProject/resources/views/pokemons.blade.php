@@ -14,7 +14,16 @@
                     </div>
                 </div>
                 <div class="default-exp-wrapper">
+
                     <div class="inner">
+                        <div class="setting-option d-none d-lg-block" style="margin-top: 40px">
+                            <form id="search" class="search-form-wrapper" action="#">
+                                <input  type="search" placeholder="Search Here" aria-label="Search">
+                                <div class="search-icon">
+                                    <button><i class="feather-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
                         <div class="filter-select-option">
                             <label class="filter-leble">Trier</label>
                             <select id="order_list">
@@ -55,4 +64,5 @@
         var pokemons = {!! json_encode($pokemons->toArray(), JSON_HEX_TAG) !!};
     </script>
     <script src="assets/js/vendor/filter.js"></script>
+    <script src="assets/js/vendor/search.js"></script>
 @endsection
