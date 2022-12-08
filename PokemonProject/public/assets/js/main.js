@@ -35,7 +35,7 @@
             imJs.vedioActivation();
             imJs.tiltJS();
         },
-        
+
         featherAtcivation: function () {
             feather.replace()
         },
@@ -53,7 +53,7 @@
                     $(scrollTop).css('opacity', '0');
                 }
             });
-            
+
             //Click event to scroll to top
             $(scrollTop).on('click', function () {
                 $('html, body').animate({
@@ -675,7 +675,7 @@
             });
         },
 
-        
+
         darkLight: function () {
             var styleMode = document.querySelector('meta[name="theme-style-mode"]').content;
             var cookieKey = styleMode == 1 ? 'client_dark_mode_style_cookie' : 'client_light_mode_style_cookie';
@@ -693,7 +693,7 @@
                 } else{
                     $('body').addClass('active-light-mode');
                 }
-                
+
             }
         },
         vedioActivation: function (e) {
@@ -737,14 +737,14 @@
                 gyroscopeMinAngleY: -45,
                 gyroscopeMaxAngleY: 45
             });
-            
+
         }
 
     }
 
     imJs.m();
 
-    
+
 
 
 })(jQuery, window)

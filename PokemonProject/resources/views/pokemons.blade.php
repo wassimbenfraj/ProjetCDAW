@@ -60,9 +60,9 @@
 @endsection
 
 @section('script')
-    <script>
-        var pokemons = {!! json_encode($pokemons->toArray(), JSON_HEX_TAG) !!};
-    </script>
+{{--    <script>--}}
+{{--        var pokemons = {!! json_encode($pokemons->toArray(), JSON_HEX_TAG) !!};--}}
+{{--    </script>--}}
     <script src="assets/js/vendor/filter.js"></script>
     <script src="assets/js/vendor/search.js"></script>
 @endsection
