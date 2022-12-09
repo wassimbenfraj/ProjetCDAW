@@ -1,26 +1,22 @@
 
 
-const list=document.querySelector('#listname');
+var list=document.querySelector('#listname');
 
 
-const searchBar =document.forms['search'].querySelector('input');
+var searchBar =document.forms['search'].querySelector('input');
 
 
-const courses=list.getElementsByClassName('col');
+var courses=list.getElementsByClassName('col');
 
 searchBar.addEventListener('keyup',function(e){
-    const term=e.target.value.toLowerCase();
+    var term=e.target.value.toLowerCase();
 
     Array.from(courses).forEach(function(course){
-        const text=course.getElementsByClassName('product-name');
-        const title=text[0].textContent;
+        var text=course.getElementsByClassName('product-name');
+        var title=text[0].textContent;
         if(title.toLowerCase().indexOf(term)==-1)
         {
-
-
             course.style.display='none';
-            course.style.position='static';
-
 
         }
         else{

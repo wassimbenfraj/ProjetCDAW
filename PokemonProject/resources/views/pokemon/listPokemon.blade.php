@@ -31,7 +31,7 @@
 {{--    @endforeach--}}
 {{--</div>--}}
 
-<div id="listname" class="container-fluid">
+<div class="container-fluid">
 
     <div class="row row-cols-5 mesonry-list">
         @foreach($pokemons as $pokemon)

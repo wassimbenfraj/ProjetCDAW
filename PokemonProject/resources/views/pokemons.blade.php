@@ -18,7 +18,7 @@
                     <div class="inner">
                         <div class="setting-option d-none d-lg-block" style="margin-top: 40px">
                             <form id="search" class="search-form-wrapper" action="#">
-                                <input  type="search" placeholder="Search Here" aria-label="Search">
+                                <input type="search" placeholder="Search Here" aria-label="Search">
                                 <div class="search-icon">
                                     <button><i class="feather-search"></i></button>
                                 </div>
@@ -50,9 +50,10 @@
                 </div>
 
             </div>
-
-            <div id="ajax_load"  class="col-lg-12">
-                @include('pokemon.listPokemon')
+            <div id="listname">
+                <div id="ajax_load" class="col-lg-12">
+                    @include('pokemon.listPokemon')
+                </div>
             </div>
         </div>
     </div>
@@ -60,9 +61,9 @@
 @endsection
 
 @section('script')
-{{--    <script>--}}
-{{--        var pokemons = {!! json_encode($pokemons->toArray(), JSON_HEX_TAG) !!};--}}
-{{--    </script>--}}
+    {{--    <script>--}}
+    {{--        var pokemons = {!! json_encode($pokemons->toArray(), JSON_HEX_TAG) !!};--}}
+    {{--    </script>--}}
     <script src="assets/js/vendor/filter.js"></script>
     <script src="assets/js/vendor/search.js"></script>
 @endsection
