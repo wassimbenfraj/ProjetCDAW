@@ -25,6 +25,8 @@
     <!-- end page title area -->
 
     <!-- login form -->
+
+
     <div class="login-area rn-section-gapTop">
         <div class="container">
             <div class="row g-5">
@@ -49,5 +51,12 @@
         </div>
     </div>
     <!-- login form end -->
+    <div style = "position:relative; left:700px; top:-400px">
+        <div class="col-lg-5 col-md-6 col-sm-12 offset-lg-1">
+            <div class="slider-thumbnail">
+            <img src="assets/images/pokemon/login-pic.png" alt="Slider Images">
+            </div>
+        </div>
+    </div>
 
 @endsection
