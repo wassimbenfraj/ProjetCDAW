@@ -14,9 +14,9 @@
                 <p class="slide-disc" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">Choisis ton
                     pokémon, et challenge un autre joueur dans un combat !</p>
                 <div class="button-group">
-                    <a class="btn btn-large btn-primary" href="#" data-sal-delay="400" data-sal="slide-up"
+                    <a class="btn btn-large btn-primary" href="/login" data-sal-delay="400" data-sal="slide-up"
                        data-sal-duration="800">Se connecter</a>
-                    <a class="btn btn-large btn-primary-alta" href="create.html" data-sal-delay="500"
+                    <a class="btn btn-large btn-primary-alta" href="/signup" data-sal-delay="500"
                        data-sal="slide-up" data-sal-duration="800">Créer un compte</a>
                 </div>
             </div>
