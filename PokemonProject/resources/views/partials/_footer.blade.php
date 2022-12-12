@@ -7,9 +7,9 @@
                     <div class="footer-left">
                         <div class="logo-thumbnail logo-custom-css">
                             <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png"
-                                                                         alt="nft-logo"></a>
+                                                                         ></a>
                             <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png"
-                                                                        alt="nft-logo"></a>
+                                                                        ></a>
                         </div>
                         <p class="rn-footer-describe">
                             Créé par une équipe de passionés de Pokémon.
