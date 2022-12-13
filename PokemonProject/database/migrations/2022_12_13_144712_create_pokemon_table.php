@@ -16,10 +16,9 @@ class CreatePokemonTable extends Migration
         Schema::create('pokemons', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->bigInteger('energy')->unsigned();
-            $table->foreign('energy')
-                ->references('id')
-                ->on('energies')
+            $table->foreignId('energy_id')
+                ->constrained()
+                ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->integer('level');
             $table->integer('hp');

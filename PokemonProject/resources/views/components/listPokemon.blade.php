@@ -37,7 +37,7 @@
         @foreach($pokemons as $pokemon)
 
             <!-- start single product -->
-            <div class="col {{$pokemon->energy}}" style="margin-top: 2%">
+            <div class="col {{$pokemon->energy->name}}" style="margin-top: 2%">
                 <div class="product-style-one no-overlay">
                     <div class="card-thumbnail">
                         <a href="product-details.html"><img src="{{$pokemon->image}}" alt="pokemon_image"/></a>
@@ -46,7 +46,7 @@
 
                     </div>
                     <a href="product-details.html"><span class="product-name">{{$pokemon->name}}</span></a>
-                    <span class="latest-bid">{{$pokemon->energy}}</span>
+                    <span class="latest-bid">{{$pokemon->energy->name}}</span>
                     <div class="bid-react-area">
                         <div class="last-bid">Niveau : {{$pokemon->level}}</div>
                         <div class="react-area">

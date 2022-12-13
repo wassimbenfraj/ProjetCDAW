@@ -18,13 +18,14 @@ use App\Http\Controllers\Controller;
 
 Route::get('/', function (Request $request) {
     return view('index', [
-        'pokemons' => \App\Models\Pokemon::all()
+        'pokemons' => \App\Models\Pokemon::with('energy')->get()
     ]);
 });
 
 Route::get('/pokemons', function (Request $request) {
+
     return view('pokemons', [
-        'pokemons' => \App\Models\Pokemon::all()
+        'pokemons' => \App\Models\Pokemon::with('energy')->get()
     ]);
 });
 

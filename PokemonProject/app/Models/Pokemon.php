@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Pokemon extends Model
 {
@@ -13,6 +14,16 @@ class Pokemon extends Model
     protected $table = 'pokemons';
 
     private static  $base_url = "https://pokeapi.co/api/v2/pokemon/";
+
+
+
+    public function energy(): BelongsTo
+    {
+        return $this->belongsTo(Energy::class);
+    }
+
+
+
 
 
     public static function fetchPokemons()
@@ -25,7 +36,7 @@ class Pokemon extends Model
             $energy = Energy::select('id')->where('name', $pokemonData->types[0]->type->name)->first();
             Pokemon::create([
                 'name' => $pokemonData->name,
-                'energy' =>  $energy->id ,
+                'energy_id' =>  $energy->id ,
                 'level' => rand(1,10),
                 'hp' => $pokemonData->stats[0]->base_stat,
                 'attack' =>  $pokemonData->stats[1]->base_stat,

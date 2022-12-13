@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Energy extends Model
 {
@@ -11,6 +12,11 @@ class Energy extends Model
 
     private static $base_url = "https://pokeapi.co/api/v2/pokemon/";
 
+
+    public function pokemon(): HasOne
+    {
+        return $this->hasOne(Pokemon::class,'energy_id');
+    }
 
     public static function fetchEnergies()
     {
