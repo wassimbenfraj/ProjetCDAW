@@ -6,9 +6,9 @@
         <div class="header-inner">
             <div class="header-left">
                 <div class="logo-thumbnail logo-custom-css">
-                    <a class="logo-light" href="index.html"><img src="assets/images/pokemon/logo-white.png" alt="nft-logo"></a>
+                    <a class="logo-light" href="index.html"><img src="assets/images/pokemon/logo-white.png"></a>
                     <a class="logo-dark" href="index.html"><img src="assets/images/pokemon/logo-dark.png"
-                                                                alt="nft-logo"></a>
+                                                                ></a>
                 </div>
                 <div class="mainmenu-wrapper">
                     <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
@@ -39,17 +39,10 @@
                 <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
                     <div class="icon-box">
 
-                        <a id="connectbtn" class="btn btn-primary-alta btn-small" href=""><i class="feather-user"></i>
+                        <a id="connectbtn" class="btn btn-primary-alta btn-small" href="/login"><i class="feather-user"></i>
                             Se connecter</a>
                     </div>
                 </div>
-
-                <div class="setting-option rn-icon-list notification-badge">
-                    <div class="icon-box">
-                        <a href="activity.html"><i class="feather-bell"></i><span class="badge">6</span></a>
-                    </div>
-                </div>
-
 
                 <div class="setting-option mobile-menu-bar d-block d-xl-none">
                     <div class="hamberger">
@@ -62,18 +55,12 @@
                 <div id="my_switcher" class="my_switcher setting-option">
                     <ul>
                         <li>
-                            <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                                <img class="sun-image" src="assets/images/icons/sun-01.svg" alt="Sun images">
-                            </a>
-                        </li>
-                        <li>
                             <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
                                 <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">
                             </a>
                         </li>
                     </ul>
                 </div>
-
 
             </div>
         </div>
@@ -85,8 +72,8 @@
     <div class="inner">
         <div class="header-top">
             <div class="logo logo-custom-css">
-                <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png"></a>
+                <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png"></a>
             </div>
             <div class="close-menu">
                 <button class="close-button">

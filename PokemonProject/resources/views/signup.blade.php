@@ -57,7 +57,7 @@
                                 <input type="password" id="exampleInputPassword1">
                             </div>
                             <button type="submit" class="btn btn-primary mr--15">Sign Up</button>
-                            <a href="login.html" class="btn btn-primary-alta">Log In</a>
+                            <a href="/login" class="btn btn-primary-alta">Log In</a>
                         </form>
                     </div>
                 </div>
@@ -65,5 +65,13 @@
         </div>
     </div>
     <!-- login form end -->
+
+    <div style = "position:relative; left:700px; top:-800px">
+        <div class="col-lg-5 col-md-6 col-sm-12 offset-lg-1">
+            <div class="slider-thumbnail">
+            <img src="assets/images/pokemon/sign-up.png">
+            </div>
+        </div>
+    </div>
 
 @endsection

@@ -28,6 +28,16 @@ Route::get('/pokemons', function (Request $request) {
     ]);
 });
 
+Route::get('/login', function (Request $request) {
+    return view('login');
+});
+
+Route::get('/signup', function (Request $request) {
+    return view('signup');
+});
+
+
+
 Route::post('/pokemons/sort','App\Http\Controllers\PokemonController@sortPokemons');
 
 
