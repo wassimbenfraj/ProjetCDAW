@@ -38,6 +38,6 @@ class CreatePokemonTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pokemon');
+        Schema::dropIfExists('pokemons');
     }
 }

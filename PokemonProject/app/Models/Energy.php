@@ -9,20 +9,22 @@ class Energy extends Model
 {
     use HasFactory;
 
-    private static  $base_url = "https://pokeapi.co/api/v2/pokemon/";
+    private static $base_url = "https://pokeapi.co/api/v2/pokemon/";
 
 
     public static function fetchEnergies()
     {
-        $pokemons = [];
-        for ($i = 1 ; $i < 50; $i++){
+        $energies = [];
+        for ($i = 1; $i < 50; $i++) {
             $id = $i;
-            $data = file_get_contents(self::$base_url. $id . '/');
+            $data = file_get_contents(self::$base_url . $id . '/');
             $pokemonData = json_decode($data);
-            Energy::create([
-                'name' => $pokemonData->types[0]->type->name,
-            ]);
+            $energies[] = $pokemonData->types[0]->type->name;
         };
-
+        $energies = array_unique($energies);
+        foreach ($energies as $energy)
+            Energy::create([
+                'name' => $energy,
+            ]);
     }
 }
