@@ -17,6 +17,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         Energy::fetchEnergies();
-        //        Pokemon::fetchPokemons();
+        Pokemon::fetchPokemons();
     }
 }

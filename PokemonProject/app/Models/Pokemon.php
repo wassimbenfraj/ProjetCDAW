@@ -9,6 +9,9 @@ class Pokemon extends Model
 {
     use HasFactory;
 
+
+    protected $table = 'pokemons';
+
     private static  $base_url = "https://pokeapi.co/api/v2/pokemon/";
 
 
@@ -19,9 +22,10 @@ class Pokemon extends Model
             $id = $i;
             $data = file_get_contents(self::$base_url. $id . '/');
             $pokemonData = json_decode($data);
+            $energy = Energy::select('id')->where('name', $pokemonData->types[0]->type->name)->first();
             Pokemon::create([
                 'name' => $pokemonData->name,
-                'energy' => $pokemonData->types[0]->type->name,
+                'energy' =>  $energy->id ,
                 'level' => rand(1,10),
                 'hp' => $pokemonData->stats[0]->base_stat,
                 'attack' =>  $pokemonData->stats[1]->base_stat,
