@@ -37,14 +37,6 @@
                                 <input type="text" id="firstName">
                             </div>
                             <div class="mb-5">
-                                <label for="sastName" class="form-label">Prénom</label>
-                                <input type="email" id="sastName">
-                            </div>
-                            <div class="mb-5">
-                                <label for="sastName" class="form-label">Nom</label>
-                                <input type="email" id="sastName">
-                            </div>
-                            <div class="mb-5">
                                 <label for="exampleInputEmail1" class="form-label">Adresse e-mail</label>
                                 <input type="email" id="exampleInputEmail1">
                             </div>
@@ -61,17 +53,15 @@
                         </form>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="slider-thumbnail">
+                        <img src="assets/images/pokemon/sign-up.png">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- login form end -->
 
-    <div style = "position:relative; left:700px; top:-800px">
-        <div class="col-lg-5 col-md-6 col-sm-12 offset-lg-1">
-            <div class="slider-thumbnail">
-            <img src="assets/images/pokemon/sign-up.png">
-            </div>
-        </div>
-    </div>
 
 @endsection
