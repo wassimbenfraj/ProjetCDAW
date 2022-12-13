@@ -12,7 +12,7 @@ class PokemonController extends Controller
         $postData = $request->post();
         $list = Pokemon::all()->sortByDesc($request->type) ;
 
-        return view('pokemon/listPokemon', [
+        return view('components/listPokemon', [
             'pokemons' => $list
         ]);
     }

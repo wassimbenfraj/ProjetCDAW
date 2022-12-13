@@ -52,7 +52,7 @@
             </div>
             <div id="listname">
                 <div id="ajax_load" class="col-lg-12">
-                    @include('pokemon.listPokemon')
+                    @include('components.listPokemon')
                 </div>
             </div>
         </div>
