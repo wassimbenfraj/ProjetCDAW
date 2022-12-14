@@ -9,6 +9,8 @@ class EnergyUser extends Model
 {
     use HasFactory;
 
+    protected $table = 'energy_users';
+
 
     protected $fillable = [
         'user_id',

@@ -12,6 +12,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -23,6 +25,7 @@ class User extends Authenticatable
         'password',
         'level',
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -46,6 +49,6 @@ class User extends Authenticatable
 
     public function energies()
     {
-        return $this->belongsToMany(Energy::class);
+        return $this->belongsToMany(Energy::class, 'energy_users');
     }
 }
