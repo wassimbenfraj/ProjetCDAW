@@ -57,7 +57,11 @@
             </div>
         </div>
     </div>
-
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            {{$pokemons->links()}}
+        </div>
+    </div>
 @endsection
 
 @section('script')
