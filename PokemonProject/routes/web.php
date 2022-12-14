@@ -21,10 +21,18 @@ Route::get('/pokemons',[\App\Http\Controllers\PokemonController::class, 'show'])
 Route::post('/pokemons/sort',[\App\Http\Controllers\PokemonController::class, 'sortPokemons']);
 
 
-// User Controller
+//              User Controller
+
+//login form
 Route::get('/login',[\App\Http\Controllers\UserController::class, 'login']);
+//signup form
 Route::get('/signup',[\App\Http\Controllers\UserController::class, 'signup']);
+//register user
 Route::post('/users',[\App\Http\Controllers\UserController::class, 'store']);
+//user authentication
+Route::post('/users/authenticate',[\App\Http\Controllers\UserController::class, 'authenticate']);
+//user logout
+Route::post('/logout',[\App\Http\Controllers\UserController::class, 'logout']);
 
 
 

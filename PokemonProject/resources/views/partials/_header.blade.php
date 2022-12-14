@@ -38,9 +38,13 @@
                 <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
                     <div class="icon-box">
                         @auth
-                            <a id="connectbtn" class="btn btn-primary-alta btn-small" href="/login"><i
-                                    class="feather-user"></i>
-                                Se déconnecter</a>
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button type="submit" id="connectbtn" class="btn btn-primary-alta btn-small" href="/login"><i
+                                        class="feather-user"></i>
+                                    Se déconnecter</button>
+                            </form>
+
                         @else
                             <a id="connectbtn" class="btn btn-primary-alta btn-small" href="/login"><i
                                     class="feather-user"></i>

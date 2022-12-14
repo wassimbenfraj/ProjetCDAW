@@ -33,14 +33,21 @@
                 <div class=" offset-2 col-lg-4 col-md-6 ml_md--0 ml_sm--0 col-sm-12">
                     <div class="form-wrapper-one">
                         <h4>Login</h4>
-                        <form>
+                        <form method="POST" action="/users/authenticate">
+                            @csrf
                             <div class="mb-5">
-                                <label for="exampleInputEmail1" class="form-label">Adresse e-mail</label>
-                                <input type="email" id="exampleInputEmail1">
+                                <label for="email" class="form-label">Adresse e-mail</label>
+                                <input type="email" id="email" name="email" value="{{old('email')}}">
+                                @error('email')
+                                <span style="color: red" >{{$message}}</span>
+                                @enderror
                             </div>
                             <div class="mb-5">
-                                <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
-                                <input type="password" id="exampleInputPassword1">
+                                <label for="password" class="form-label">Mot de passe</label>
+                                <input type="password" id="password" name="password" value="{{old('password')}}">
+                                @error('password')
+                                <span style="color: red" >{{$message}}</span>
+                                @enderror
                             </div>
                             <button type="submit" class="btn btn-primary mr--15">Log In</button>
                             <a href="/signup" class="btn btn-primary-alta">Sign Up</a>

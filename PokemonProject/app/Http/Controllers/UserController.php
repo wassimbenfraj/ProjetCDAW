@@ -21,6 +21,34 @@ class UserController extends Controller
         return view('signup');
     }
 
+    public function logout(Request $request){
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/')->with('message', 'You have been logged out!');
+
+    }
+
+    public function authenticate(Request $request){
+
+        $formfields = $request->validate([
+            'email' => ['required','email'],
+            'password' => 'required'
+        ]);
+
+        if (auth()->attempt($formfields)) {
+            $request->session()->regenerate();
+
+            return redirect('/')->with('message', 'You are now logged in!');
+        }
+
+        return back()->withErrors(['email' => 'Invalid Credentials',
+        ])->onlyInput('email');
+    }
+
+
     public function store(Request $request){
         $formfields = $request->validate([
            'name' => ['required','min:3'],
