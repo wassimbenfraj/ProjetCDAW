@@ -1,4 +1,3 @@
-
 <!-- start header area -->
 <!-- Start Header -->
 <header class="rn-header haeder-default header--sticky">
@@ -8,7 +7,7 @@
                 <div class="logo-thumbnail logo-custom-css">
                     <a class="logo-light" href="index.html"><img src="assets/images/pokemon/logo-white.png"></a>
                     <a class="logo-dark" href="index.html"><img src="assets/images/pokemon/logo-dark.png"
-                                                                ></a>
+                        ></a>
                 </div>
                 <div class="mainmenu-wrapper">
                     <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
@@ -38,9 +37,15 @@
 
                 <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
                     <div class="icon-box">
-
-                        <a id="connectbtn" class="btn btn-primary-alta btn-small" href="/login"><i class="feather-user"></i>
-                            Se connecter</a>
+                        @auth
+                            <a id="connectbtn" class="btn btn-primary-alta btn-small" href="/login"><i
+                                    class="feather-user"></i>
+                                Se déconnecter</a>
+                        @else
+                            <a id="connectbtn" class="btn btn-primary-alta btn-small" href="/login"><i
+                                    class="feather-user"></i>
+                                Se connecter</a>
+                        @endauth
                     </div>
                 </div>
 
@@ -52,15 +57,20 @@
                     </div>
                 </div>
 
-                <div id="my_switcher" class="my_switcher setting-option">
-                    <ul>
-                        <li>
+                {{--                <div id="my_switcher" class="my_switcher setting-option" >--}}
+                @auth
+                    <div id="my_switcher">
+                        <ul>
+
+                            {{--                        <li>--}}
                             <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                                <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">
+                                {{auth()->user()->name}}
+                                {{--                                <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">--}}
                             </a>
-                        </li>
-                    </ul>
-                </div>
+                            {{--                        </li>--}}
+                        </ul>
+                    </div>
+                @endauth
 
             </div>
         </div>
