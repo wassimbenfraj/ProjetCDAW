@@ -18,6 +18,11 @@ class Energy extends Model
         return $this->hasOne(Pokemon::class,'energy_id');
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
     public static function fetchEnergies()
     {
         $energies = [];

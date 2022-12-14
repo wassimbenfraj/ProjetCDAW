@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EnergyUser;
 use App\Models\Pokemon;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
 class UserController extends Controller
@@ -28,8 +30,14 @@ class UserController extends Controller
 
         $formfields['password'] = bcrypt($formfields['password']);
         $formfields['level'] = 1 ;
-        dd($formfields);
-//        $user = User::create($formfields)
+        $energy = DB::table('energies')
+            ->inRandomOrder()
+            ->first();
+        $user = User::create($formfields);
+        EnergyUser::create([
+            'user_id' => $user->id,
+            'energy_id' => $energy->id,
+        ]);
 
     }
 

@@ -35,14 +35,14 @@
                             @csrf
                             <div class="mb-5">
                                 <label for="name" class="form-label">Pseudo</label>
-                                <input type="text" name="name" id="name">
+                                <input type="text" name="name" id="name" value="{{old('name')}}">
                                 @error('name')
                                 <span style="color: red" >{{$message}}</span>
                                 @enderror
                             </div>
                             <div class="mb-5">
                                 <label for="email" class="form-label">Adresse e-mail</label>
-                                <input type="email" id="email" name="email">
+                                <input type="email" id="email" name="email" value="{{old('email')}}">
                                 @error('email')
                                 <span style="color: red" >{{$message}}</span>
                                 @enderror
