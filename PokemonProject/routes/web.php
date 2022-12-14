@@ -16,29 +16,15 @@ use App\Http\Controllers\Controller;
 
 
 
-Route::get('/', function (Request $request) {
-    return view('index', [
-        'pokemons' => \App\Models\Pokemon::with('energy')->get()
-    ]);
-});
+Route::get('/',[\App\Http\Controllers\PokemonController::class, 'index']);
+Route::get('/pokemons',[\App\Http\Controllers\PokemonController::class, 'show']);
 
-Route::get('/pokemons', function (Request $request) {
 
-    return view('pokemons', [
-        'pokemons' => \App\Models\Pokemon::with('energy')->get()
-    ]);
-});
-
-Route::get('/login', function (Request $request) {
-    return view('login');
-});
-
-Route::get('/signup', function (Request $request) {
-    return view('signup');
-});
+Route::get('/login',[\App\Http\Controllers\UserController::class, 'login']);
+Route::get('/signup',[\App\Http\Controllers\UserController::class, 'signup']);
 
 
 
-Route::post('/pokemons/sort','App\Http\Controllers\PokemonController@sortPokemons');
 
+Route::post('/pokemons/sort',[\App\Http\Controllers\PokemonController::class, 'sortPokemons']);
 
