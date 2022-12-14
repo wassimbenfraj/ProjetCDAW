@@ -15,16 +15,19 @@ use App\Http\Controllers\Controller;
 */
 
 
-
+// Pokemon Controller
 Route::get('/',[\App\Http\Controllers\PokemonController::class, 'index']);
 Route::get('/pokemons',[\App\Http\Controllers\PokemonController::class, 'show']);
+Route::post('/pokemons/sort',[\App\Http\Controllers\PokemonController::class, 'sortPokemons']);
 
 
+// User Controller
 Route::get('/login',[\App\Http\Controllers\UserController::class, 'login']);
 Route::get('/signup',[\App\Http\Controllers\UserController::class, 'signup']);
+Route::post('/users',[\App\Http\Controllers\UserController::class, 'store']);
 
 
 
 
-Route::post('/pokemons/sort',[\App\Http\Controllers\PokemonController::class, 'sortPokemons']);
+
 
