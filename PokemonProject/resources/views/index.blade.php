@@ -4,31 +4,31 @@
 
 
 @section('content')
-<!-- start banner area -->
-<div class="slider-one rn-section-gapTop">
-    <div class="container">
-        <div class="row row-reverce-sm align-items-center">
-            <div class="col-lg-5 col-md-6 col-sm-12 mt_sm--50">
-                <h2 class="title" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">Tu rêves d'être
-                    dresseur ? Tu es au bon endroit !</h2>
-                <p class="slide-disc" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">Choisis ton
-                    pokémon, et challenge un autre joueur dans un combat !</p>
-                <div class="button-group">
-                    <a class="btn btn-large btn-primary" href="/login" data-sal-delay="400" data-sal="slide-up"
-                       data-sal-duration="800">Se connecter</a>
-                    <a class="btn btn-large btn-primary-alta" href="/signup" data-sal-delay="500"
-                       data-sal="slide-up" data-sal-duration="800">Créer un compte</a>
+    <!-- start banner area -->
+    <div class="slider-one rn-section-gapTop">
+        <div class="container">
+            <div class="row row-reverce-sm align-items-center">
+                <div class="col-lg-5 col-md-6 col-sm-12 mt_sm--50">
+                    <h2 class="title" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">Tu rêves d'être
+                        dresseur ? Tu es au bon endroit !</h2>
+                    <p class="slide-disc" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">Choisis ton
+                        pokémon, et challenge un autre joueur dans un combat !</p>
+                    <div class="button-group">
+                        <a class="btn btn-large btn-primary" href="/login" data-sal-delay="400" data-sal="slide-up"
+                           data-sal-duration="800">Se connecter</a>
+                        <a class="btn btn-large btn-primary-alta" href="/signup" data-sal-delay="500"
+                           data-sal="slide-up" data-sal-duration="800">Créer un compte</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-5 col-md-6 col-sm-12 offset-lg-1">
-                <div class="slider-thumbnail">
-                    <img src="assets/images/pokemon/slider-1.png" alt="Slider Images">
+                <div class="col-lg-5 col-md-6 col-sm-12 offset-lg-1">
+                    <div class="slider-thumbnail">
+                        <img src="assets/images/pokemon/slider-1.png" alt="Slider Images">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End banner areaa -->
+    <!-- End banner areaa -->
 
 
     <div class="rn-product-area rn-section-gapTop masonary-wrapper-activation">
@@ -64,6 +64,9 @@
                     </div>
                     <!-- end single product -->
                 @endforeach
+            </div>
+            <div class="d-flex justify-content-center">
+                {{$pokemons->links()}}
             </div>
         </div>
     </div>
