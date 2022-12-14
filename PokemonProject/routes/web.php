@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,23 +17,23 @@ use App\Http\Controllers\Controller;
 
 
 // Pokemon Controller
-Route::get('/',[\App\Http\Controllers\PokemonController::class, 'index']);
-Route::get('/pokemons',[\App\Http\Controllers\PokemonController::class, 'show'])->middleware('auth');
-Route::post('/pokemons/sort',[\App\Http\Controllers\PokemonController::class, 'sortPokemons']);
+Route::get('/', [\App\Http\Controllers\PokemonController::class, 'index']);
+Route::get('/pokemons', [\App\Http\Controllers\PokemonController::class, 'show'])->middleware('auth');
+Route::post('/pokemons/sort', [\App\Http\Controllers\PokemonController::class, 'sortPokemons']);
 
 
 //              User Controller
 
 //login form
-Route::get('/login',[\App\Http\Controllers\UserController::class, 'login'])->name('login');
+Route::get('/login', [\App\Http\Controllers\UserController::class, 'login'])->name('login')->middleware('guest');
 //signup form
-Route::get('/signup',[\App\Http\Controllers\UserController::class, 'signup']);
+Route::get('/signup', [\App\Http\Controllers\UserController::class, 'signup'])->middleware('guest');
 //register user
-Route::post('/users',[\App\Http\Controllers\UserController::class, 'store']);
+Route::post('/users', [\App\Http\Controllers\UserController::class, 'store']);
 //user authentication
-Route::post('/users/authenticate',[\App\Http\Controllers\UserController::class, 'authenticate']);
+Route::post('/users/authenticate', [\App\Http\Controllers\UserController::class, 'authenticate']);
 //user logout
-Route::post('/logout',[\App\Http\Controllers\UserController::class, 'logout']);
+Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
 
 
 
