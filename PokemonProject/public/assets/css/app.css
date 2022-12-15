@@ -1,0 +1,24 @@
+.d-flex.align-items-center{
+    background-image: url('/assets/images/pokemon/102327.png');
+    background-size: 100%;
+    background-position: center;
+}
+.pokemon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon-image {
+    width: 150px;
+    height: 150px;
+}
+.progress{
+    border-radius: 10px;
+    background-color: #ab4f4f;
+    width: 70%;
+    height:2rem;
+    margin-left: 15%;
+    margin-bottom: 25%
+}
+

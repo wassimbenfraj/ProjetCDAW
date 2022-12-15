@@ -16,9 +16,10 @@ use App\Http\Controllers\Controller;
 */
 
 
-// Pokemon Controller
+//             Pokemon Controller
+
 Route::get('/', [\App\Http\Controllers\PokemonController::class, 'index']);
-Route::get('/pokemons', [\App\Http\Controllers\PokemonController::class, 'show'])->middleware('auth');
+Route::get('/pokemons', [\App\Http\Controllers\PokemonController::class, 'show']);
 Route::post('/pokemons/sort', [\App\Http\Controllers\PokemonController::class, 'sortPokemons']);
 
 
@@ -37,6 +38,7 @@ Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
 
 
 
+//              User Controller
 
-
+Route::get('/combat', [\App\Http\Controllers\CombatController::class, 'index']);
 
