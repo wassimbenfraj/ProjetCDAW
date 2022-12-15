@@ -11,9 +11,12 @@ class CombatController extends Controller
 
     public function index(Request $request)
     {
-        return view('battle');
-//        return view('combat', [
-//            'pokemons' => \App\Models\Pokemon::with('energy')->paginate(10)
-//        ]);
+
+
+        return view('battle', [
+            'users' => \App\Models\User::with('combats')
+                ->with('combatsWon')
+                ->get(),
+        ]);
     }
 }
