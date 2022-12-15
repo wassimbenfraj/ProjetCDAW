@@ -15,14 +15,9 @@
                 <div class="default-exp-wrapper">
                 </div>
             </div>
-            <div class="d-flex align-items-center" style="height: 60rem;">
-                <div class="container-fluid" style="height: 40rem; width: 120rem;">
-                </div>
-            </div>
+            @yield('battle')
         </div>
     </div>
 @endsection
 
-@section('script')
 
-@endsection

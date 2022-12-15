@@ -66,7 +66,11 @@
                 @endforeach
             </div>
             <div class="d-flex justify-content-center">
-                {{$pokemons->links()}}
+            </div>
+            <div class="col-lg-12" data-sal="slide-up" data-sal-delay="550" data-sal-duration="800">
+                <nav class="pagination-wrapper" aria-label="Page navigation example">
+                    {{$pokemons->links()}}
+                </nav>
             </div>
         </div>
     </div>
