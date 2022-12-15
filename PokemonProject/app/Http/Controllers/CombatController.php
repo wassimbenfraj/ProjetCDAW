@@ -17,6 +17,9 @@ class CombatController extends Controller
             'users' => \App\Models\User::with('combats')
                 ->with('combatsWon')
                 ->get(),
+            'pokemons' => \App\Models\Pokemon::inRandomOrder()
+                ->with('energy')
+                ->get()
         ]);
     }
 }

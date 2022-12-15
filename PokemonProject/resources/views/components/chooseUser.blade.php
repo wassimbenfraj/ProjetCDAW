@@ -20,14 +20,14 @@
         <tbody>
         @foreach($users as $index=>$user)
             @if($index % 2 == 0)
-                    <tr class="color-light" onclick="chooseUser({{$index}})">
+                    <tr class="color-light" onclick="chooseUser({{$user->id}})">
                         <td><span>{{$user->name}}</span></td>
                         <td><span class="color-green">{{$user->level}}</span></td>
                         <td><span class="color-danger">{{count($user->combats)}}</span></td>
                         <td><span class="color-info">{{count($user->combatsWon)}}</span></td>
                     </tr>
             @else
-                    <tr onclick="chooseUser({{$index}})">
+                    <tr onclick="chooseUser({{$user->id}})">
                         <td><span>{{$user->name}}</span></td>
                         <td><span class="color-green">{{$user->level}}</span></td>
                         <td><span class="color-danger">{{count($user->combats)}}</span></td>
