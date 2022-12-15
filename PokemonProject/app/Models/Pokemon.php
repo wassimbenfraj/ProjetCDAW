@@ -23,7 +23,10 @@ class Pokemon extends Model
     }
 
 
-
+    public function combats()
+    {
+        return $this->belongsToMany(Energy::class, 'combat_pokemons');
+    }
 
 
     public static function fetchPokemons()

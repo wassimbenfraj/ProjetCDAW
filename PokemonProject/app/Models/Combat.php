@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Combat extends Model
 {
     use HasFactory;
+
+
+    public function pokemons()
+    {
+        return $this->belongsToMany(User::class,'combat_pokemons');
+    }
 }
