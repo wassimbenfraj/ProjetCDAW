@@ -14,4 +14,8 @@ class Combat extends Model
     {
         return $this->belongsToMany(User::class,'combat_pokemons');
     }
+    public function users()
+    {
+        return $this->belongsToMany(Energy::class, 'combat_users');
+    }
 }

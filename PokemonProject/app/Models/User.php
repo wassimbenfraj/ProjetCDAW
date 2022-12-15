@@ -51,4 +51,8 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Energy::class, 'energy_users');
     }
+    public function combats()
+    {
+        return $this->belongsToMany(Energy::class, 'combat_users');
+    }
 }
