@@ -13,7 +13,7 @@ class CombatController extends Controller
     {
 
 
-        return view('battle', [
+        return view('combat', [
             'users' => \App\Models\User::with('combats')
                 ->with('combatsWon')
                 ->get(),

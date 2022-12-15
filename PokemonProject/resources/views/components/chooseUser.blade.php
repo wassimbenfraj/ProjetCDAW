@@ -1,4 +1,4 @@
-<div class="box-table table-responsive">
+    <div class="box-table table-responsive" id="userSelect">
     <table class="table upcoming-projects">
         <thead>
         <tr>
@@ -20,14 +20,14 @@
         <tbody>
         @foreach($users as $index=>$user)
             @if($index % 2 == 0)
-                    <tr class="color-light" onclick="test()">
+                    <tr class="color-light" onclick="chooseUser({{$index}})">
                         <td><span>{{$user->name}}</span></td>
                         <td><span class="color-green">{{$user->level}}</span></td>
                         <td><span class="color-danger">{{count($user->combats)}}</span></td>
                         <td><span class="color-info">{{count($user->combatsWon)}}</span></td>
                     </tr>
             @else
-                    <tr onclick="test()">
+                    <tr onclick="chooseUser({{$index}})">
                         <td><span>{{$user->name}}</span></td>
                         <td><span class="color-green">{{$user->level}}</span></td>
                         <td><span class="color-danger">{{count($user->combats)}}</span></td>
