@@ -25,7 +25,7 @@ class Pokemon extends Model
 
     public function combats()
     {
-        return $this->belongsToMany(Energy::class, 'combat_pokemons');
+        return $this->belongsToMany(Combat::class, 'combat_pokemons');
     }
 
 

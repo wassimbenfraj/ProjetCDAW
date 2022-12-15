@@ -18,6 +18,10 @@ class CreateCombatsTable extends Migration
             $table->string('mode');
             $table->dateTime('date');
             $table->string('status');
+            $table->foreignId('user_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
