@@ -27,6 +27,8 @@ var indexPokemon2 = 0;
 var round = 1;
 var tour = 1;
 var firstPlayer;
+var comment = '';
+var i = 0;
 
 var health1;
 var currentHealth1;
@@ -179,7 +181,10 @@ function applyMove(player, moveNumber, movePoints) {
                 // console.log(` Player 1 attacked with ${movePoints} Points`);
                 // console.log(` Player 2  ${defenseBlock2} Points of the attack`);
                 // console.log(` Player 2 hit with ${movePoints - defenseBlock2} Points \n `);
-                CommentBox.innerText = ` Player 1 attacked with ${movePoints} Points \n  Player 2 blocked ${defenseBlock2} Points of the attack `
+                comment = ` Player 1 attacked with ${movePoints} Points. Player 2 blocked ${defenseBlock2} Points of the attack `
+                CommentBox.innerHTML = '';
+                i = 0;
+                typing();
                 defenseBlock2 = 0;
                 if (currentHealth2 < 0) {
                     indexPokemon2++;
@@ -190,7 +195,10 @@ function applyMove(player, moveNumber, movePoints) {
                 break;
             case 2:
                 defenseBlock1 = movePoints;
-                CommentBox.innerText = `Player 1 chose special defense ability and will block the next attack with ${defenseBlock1} defense Points`
+                comment = `Player 1 chose special defense ability and will block the next attack with ${defenseBlock1} defense Points`
+                CommentBox.innerHTML = '';
+                i = 0;
+                typing();
                 break;
             default:
                 if (movePoints < defenseBlock2) {
@@ -198,7 +206,10 @@ function applyMove(player, moveNumber, movePoints) {
                 } else {
                     currentHealth2 -= movePoints - defenseBlock2;
                 }
-                CommentBox.innerText = ` Player 1 attacked with ${movePoints} Points \n  Player 2 blocked ${defenseBlock2} Points of the attack `
+                comment = ` Player 1 attacked with ${movePoints} Points. Player 2 blocked ${defenseBlock2} Points of the attack `
+                CommentBox.innerHTML = '';
+                i = 0;
+                typing();
                 defenseBlock2 = 0;
                 if (currentHealth2 <= 0) {
                     indexPokemon2++;
@@ -218,8 +229,11 @@ function applyMove(player, moveNumber, movePoints) {
                 // console.log(` Player 2 attacked with ${movePoints} Points`);
                 // console.log(` Player 1 blocked the attack with ${defenseBlock1} Points`);
                 // console.log(` Player 1 hit with ${movePoints - defenseBlock1} Points \n `);
-                CommentBox.innerText = ` Player 2 attacked with ${movePoints} Points \n  Player 1 blocked ${defenseBlock1} Points of the attack `
+                comment = ` Player 2 attacked with ${movePoints} Points. Player 1 blocked ${defenseBlock1} Points of the attack `
+                CommentBox.innerHTML = '';
 
+                i = 0;
+                typing();
                 defenseBlock1 = 0;
 
                 if (currentHealth1 < 0) {
@@ -231,7 +245,10 @@ function applyMove(player, moveNumber, movePoints) {
             case 2:
                 defenseBlock2 = movePoints;
                 // console.log(` Player 2 chose special defense ability and will block the next attack with ${defenseBlock2} defense Points`);
-                CommentBox.innerText = `Player 2 chose special defense ability and will block the next attack with ${defenseBlock2} defense Points`
+                comment = `Player 2 chose special defense ability and will block the next attack with ${defenseBlock2} defense Points`
+                CommentBox.innerHTML = '';
+                i = 0;
+                typing();
                 break;
             default:
                 if (movePoints < defenseBlock1) {
@@ -242,7 +259,10 @@ function applyMove(player, moveNumber, movePoints) {
                 // console.log(` Player 2 attacked with ${movePoints} Points`);
                 // console.log(` Player 1 blocked the attack with ${defenseBlock1} Points`);
                 // console.log(` Player 1 hit with ${movePoints - defenseBlock1} Points \n `);
-                CommentBox.innerText = ` Player 2 attacked with ${movePoints} Points \n  Player 1 blocked ${defenseBlock1} Points of the attack `
+                comment = ` Player 2 attacked with ${movePoints} Points. Player 1 blocked ${defenseBlock1} Points of the attack `
+                CommentBox.innerHTML = '';
+                i = 0;
+                typing();
                 defenseBlock1 = 0;
                 if (currentHealth1 <= 0) {
                     indexPokemon1++;
@@ -264,4 +284,12 @@ function updateProgressBar(player, currentHealth, health) {
         }
     }
 
+}
+
+function typing() {
+    if (i < comment.length) {
+        CommentBox.innerHTML += comment.charAt(i);
+        i++;
+        setTimeout(typing, 50);
+    }
 }

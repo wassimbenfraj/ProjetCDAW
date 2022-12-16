@@ -66,7 +66,7 @@
                     Suivant
                 </button>
             </div>
-            <div id="comment"> Type your comment here.</div>
+            <div id="comment"></div>
         </div>
     </div>
 </div>
