@@ -92,7 +92,7 @@ function chooseMode(idMode) {
 
         // If the random number is less than 0.5, player 1 goes first, otherwise player 2 goes first
         firstPlayer = randomNumber < 0.5 ? 1 : 2;
-        ChoosePokemon(firstPlayer, 1);
+        changeheadline(firstPlayer, 1);
 
     } else {
 
@@ -313,58 +313,60 @@ function typing() {
 
 
 function choosePokemons(pokemonName) {
-    if (player1Pokemons.length < 3 || player2Pokemons.length < 3) {
-        let pokemon = pokemons.find((pokemon) => {
-            return pokemon.name === pokemonName;
-        });
-        if (round % 2 === 1) {
-            if (firstPlayer === 1) {
-                //player
 
-                player1Pokemons.push(pokemon);
+    let pokemon = pokemons.find((pokemon) => {
+        return pokemon.name === pokemonName;
+    });
+    if (round % 2 === 1) {
+        if (firstPlayer === 1) {
+            //player
 
-                indexPokemon1++;
-                changeheadline(2, indexPokemon2);
-            } else {
-                //player2
+            player1Pokemons.push(pokemon);
 
-                player2Pokemons.push(pokemon);
-
-                indexPokemon2++;
-                changeheadline(1, indexPokemon1);
-            }
+            indexPokemon1++;
+            changeheadline(2, indexPokemon2);
         } else {
-            if (firstPlayer === 1) {
-                //player2
+            //player2
 
-                player2Pokemons.push(pokemon);
+            player2Pokemons.push(pokemon);
 
-                indexPokemon2++;
-                changeheadline(1, indexPokemon1);
-
-            } else {
-                //player1
-
-                player1Pokemons.push(pokemon);
-
-                indexPokemon1++;
-                changeheadline(2, indexPokemon2);
-            }
+            indexPokemon2++;
+            changeheadline(1, indexPokemon1);
         }
-        round++;
     } else {
+        if (firstPlayer === 1) {
+            //player2
+
+            player2Pokemons.push(pokemon);
+
+            indexPokemon2++;
+            changeheadline(1, indexPokemon1);
+
+        } else {
+            //player1
+
+            player1Pokemons.push(pokemon);
+
+            indexPokemon1++;
+            changeheadline(2, indexPokemon2);
+        }
+    }
+    round++;
+
+    if (player1Pokemons.length > 2 && player2Pokemons.length > 2) {
         alert('Pokemons Chosen');
         indexPokemon1 = 0;
         indexPokemon2 = 0;
         console.log(player1Pokemons)
         console.log(player2Pokemons)
         tour = 1;
+
     }
 }
 
-
 function changeheadline(playerNumber, pokemonIndex) {
-    headline.innerText = `Player ${playerNumber} choose your ${pokemonIndex} Pokemon`
+    if (pokemonIndex < 4)
+        headline.innerText = `Player ${playerNumber} choose your ${pokemonIndex} Pokemon`
 }
 
 
