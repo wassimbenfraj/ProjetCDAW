@@ -8,11 +8,11 @@ modeSelect.style.display = 'none';
 // battle selection interface
 var battleSelect = document.getElementById('battleSelect');
 
-
 // Pokémon Select Interface
-var pokemonSelect = document.getElementById('pokemonSelect');
-pokemonSelect.style.display = 'none';
+var pokemonSelect = document.querySelector('#pokemonSelect');
+var filteredPokemons = pokemonSelect.getElementsByClassName('col');
 
+pokemonSelect.style.display = 'none';
 
 // Array(2)
 var movesSelect = document.getElementsByClassName('moves');
@@ -21,9 +21,11 @@ nextButton.style.display = 'none';
 
 //comment Box
 var CommentBox = document.getElementById('comment');
-console.log(CommentBox)
 
 var headline = document.getElementById('headline');
+
+
+
 
 var player1Pokemons = []
 var player2Pokemons = []
@@ -317,6 +319,9 @@ function choosePokemons(pokemonName) {
     let pokemon = pokemons.find((pokemon) => {
         return pokemon.name === pokemonName;
     });
+     pokemons = pokemons.filter((pokemon) => {
+        return pokemon.name !== pokemonName;
+    });
     if (round % 2 === 1) {
         if (firstPlayer === 1) {
             //player
@@ -353,6 +358,9 @@ function choosePokemons(pokemonName) {
     }
     round++;
 
+    filterPokemonsSelected(pokemonName);
+    console.log(player1Pokemons)
+    console.log(player2Pokemons)
     if (player1Pokemons.length > 2 && player2Pokemons.length > 2) {
         alert('Pokemons Chosen');
         indexPokemon1 = 0;
@@ -360,8 +368,9 @@ function choosePokemons(pokemonName) {
         console.log(player1Pokemons)
         console.log(player2Pokemons)
         tour = 1;
-
     }
+
+
 }
 
 function changeheadline(playerNumber, pokemonIndex) {
@@ -370,4 +379,17 @@ function changeheadline(playerNumber, pokemonIndex) {
 }
 
 
+function filterPokemonsSelected(pokemonName) {
+    Array.from(filteredPokemons).forEach(function(filteredPokemon){
+        var text=filteredPokemon.getElementsByClassName('product-name');
+        var title=text[0].textContent;
+        if(title.toLowerCase() === pokemonName )
+        {
+            filteredPokemon.parentNode.removeChild(filteredPokemon);
+        }
+        else{
+            filteredPokemon.style.display='block';
 
+        }
+    })
+}
