@@ -29,3 +29,10 @@ tr{
     cursor: pointer;
 }
 
+.counter{
+    color: #000000;
+    position: relative;
+    left: 100%;
+    bottom: 20%;
+    font-size: 4em;
+}
