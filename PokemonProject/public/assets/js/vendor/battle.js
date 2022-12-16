@@ -8,6 +8,13 @@ modeSelect.style.display = 'none';
 // battle selection interface
 var battleSelect = document.getElementById('battleSelect');
 
+
+// Pokémon Select Interface
+var pokemonSelect = document.getElementById('pokemonSelect');
+pokemonSelect.style.display = 'none';
+
+
+
 // Array(2)
 var movesSelect = document.getElementsByClassName('moves');
 var nextButton = document.getElementById('nextButton');
@@ -16,6 +23,8 @@ nextButton.style.display = 'none';
 //comment Box
 var CommentBox = document.getElementById('comment');
 console.log(CommentBox)
+
+var headline = document.getElementById('headline');
 
 var player1Pokemons = []
 var player2Pokemons = []
@@ -48,11 +57,13 @@ var image2 = document.getElementById('pokemonImage2');
 function chooseUser(idUser) {
     userSelect.style.display = 'none';
     modeSelect.style.display = 'block';
+    headline.innerText = "Choose Your Mode"
 }
 
 function chooseMode(idMode) {
     userSelect.style.display = 'none';
     modeSelect.style.display = 'none';
+    headline.style.display = 'none'
 
 
     if (idMode === 1) {
@@ -76,6 +87,11 @@ function chooseMode(idMode) {
         firstPlayer = randomNumber < 0.5 ? 1 : 2;
 
     } else if (idMode === 2) {
+        pokemonSelect.style.display = 'block';
+        const randomNumber = Math.random();
+
+        // If the random number is less than 0.5, player 1 goes first, otherwise player 2 goes first
+        firstPlayer = randomNumber < 0.5 ? 1 : 2;
 
     } else {
 
