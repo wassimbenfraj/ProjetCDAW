@@ -36,3 +36,20 @@ tr{
     bottom: 20%;
     font-size: 4em;
 }
+.progressContent{
+    position: relative;
+    left: 100px;
+    font-size: 2em;
+    font-weight: bold;
+}
+#comment {
+    top: 40px;
+    position: relative;
+    background-color: bisque;
+    width: 60%;
+    left: 20px;
+    height: 100px;
+    padding: 10px;
+    font: 1.4em/1.6em cursive;
+    color: #095484;
+}

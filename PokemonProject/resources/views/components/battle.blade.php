@@ -3,6 +3,7 @@
         <div class="row pokemon-container">
             <div class="col-6 text-center">
                 <div class="progress" style="width: 70%; height:2rem;margin-left: 15%;">
+{{--                    <div class="progressContent">test</div>--}}
                     <div style="font-size: 2em; font-weight: bold;" id="pokemonProgressbar1"
                          class="progress-bar progress-bar-striped progress-bar-animated bg-success"
                          role="progressbar"
@@ -32,6 +33,7 @@
             </div>
             <div class="col-6 text-center">
                 <div class="progress" style="">
+{{--                    <div class="progressContent">test</div>--}}
                     <div style="font-size: 2em; font-weight: bold;" id="pokemonProgressbar2"
                          class="progress-bar progress-bar-striped progress-bar-animated bg-success"
                          role="progressbar"
@@ -64,6 +66,7 @@
                     Suivant
                 </button>
             </div>
+            <div id="comment"> Type your comment here.</div>
         </div>
     </div>
 </div>
