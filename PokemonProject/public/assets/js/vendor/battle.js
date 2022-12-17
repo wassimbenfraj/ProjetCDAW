@@ -25,6 +25,8 @@ var CommentBox = document.getElementById('comment');
 var headline = document.getElementById('headline');
 
 
+var pokemon1Buttons = document.getElementsByClassName('pokemon1Buttons');
+var pokemon2Buttons = document.getElementsByClassName('pokemon2Buttons');
 
 
 var player1Pokemons = []
@@ -50,7 +52,7 @@ var defenseBlock2 = 0;
 
 var progressbar1 = document.getElementById('pokemonProgressbar1');
 var progressbar2 = document.getElementById('pokemonProgressbar2');
-// var progressContent = document.getElementsByClassName('progress');
+var progressContent = document.getElementsByClassName('progress');
 
 var image1 = document.getElementById('pokemonImage1');
 var image2 = document.getElementById('pokemonImage2');
@@ -95,7 +97,8 @@ function chooseMode(idMode) {
         // If the random number is less than 0.5, player 1 goes first, otherwise player 2 goes first
         firstPlayer = randomNumber < 0.5 ? 1 : 2;
         changeheadline(firstPlayer, 1);
-
+        setPokemon1MovestoButtons();
+        setPokemon2MovestoButtons();
     } else {
 
     }
@@ -208,6 +211,8 @@ function applyMove(player, moveNumber, movePoints) {
                 if (currentHealth2 < 0) {
                     indexPokemon2++;
                     setupPokemonOnScreen(2, indexPokemon2);
+                    setPokemon1MovestoButtons();
+                    setPokemon2MovestoButtons();
                 }
                 updateProgressBar(2, currentHealth2, health2);
 
@@ -233,6 +238,8 @@ function applyMove(player, moveNumber, movePoints) {
                 if (currentHealth2 <= 0) {
                     indexPokemon2++;
                     setupPokemonOnScreen(2, indexPokemon2);
+                    setPokemon1MovestoButtons();
+                    setPokemon2MovestoButtons();
                 }
                 updateProgressBar(2, currentHealth2, health2);
 
@@ -258,6 +265,8 @@ function applyMove(player, moveNumber, movePoints) {
                 if (currentHealth1 < 0) {
                     indexPokemon1++;
                     setupPokemonOnScreen(1, indexPokemon1);
+                    setPokemon1MovestoButtons();
+                    setPokemon2MovestoButtons();
                 }
                 updateProgressBar(1, currentHealth1, health1);
                 break;
@@ -286,6 +295,8 @@ function applyMove(player, moveNumber, movePoints) {
                 if (currentHealth1 <= 0) {
                     indexPokemon1++;
                     setupPokemonOnScreen(1, indexPokemon1);
+                    setPokemon1MovestoButtons();
+                    setPokemon2MovestoButtons();
                 }
                 updateProgressBar(1, currentHealth1, health1);
         }
@@ -319,7 +330,7 @@ function choosePokemons(pokemonName) {
     let pokemon = pokemons.find((pokemon) => {
         return pokemon.name === pokemonName;
     });
-     pokemons = pokemons.filter((pokemon) => {
+    pokemons = pokemons.filter((pokemon) => {
         return pokemon.name !== pokemonName;
     });
     if (round % 2 === 1) {
@@ -359,15 +370,24 @@ function choosePokemons(pokemonName) {
     round++;
 
     filterPokemonsSelected(pokemonName);
-    console.log(player1Pokemons)
-    console.log(player2Pokemons)
+
     if (player1Pokemons.length > 2 && player2Pokemons.length > 2) {
-        alert('Pokemons Chosen');
         indexPokemon1 = 0;
         indexPokemon2 = 0;
-        console.log(player1Pokemons)
-        console.log(player2Pokemons)
         tour = 1;
+        battleSelect.setAttribute('style', 'display: flex !important');
+        Array.from(movesSelect).forEach((moves) => {
+            moves.style.display = 'block';
+        });
+        pokemonSelect.style.display = 'none';
+        setupPokemonOnScreen(1, 0);
+        setupPokemonOnScreen(2, 0);
+        updateProgressBar(1, currentHealth1, health1);
+        updateProgressBar(2, currentHealth2, health2);
+        Array.from(progressContent).forEach((progress) => {
+            progress.style.marginBottom = '15%';
+        });
+
     }
 
 
@@ -380,16 +400,64 @@ function changeheadline(playerNumber, pokemonIndex) {
 
 
 function filterPokemonsSelected(pokemonName) {
-    Array.from(filteredPokemons).forEach(function(filteredPokemon){
-        var text=filteredPokemon.getElementsByClassName('product-name');
-        var title=text[0].textContent;
-        if(title.toLowerCase() === pokemonName )
-        {
+    Array.from(filteredPokemons).forEach(function (filteredPokemon) {
+        var text = filteredPokemon.getElementsByClassName('product-name');
+        var title = text[0].textContent;
+        if (title.toLowerCase() === pokemonName) {
             filteredPokemon.parentNode.removeChild(filteredPokemon);
-        }
-        else{
-            filteredPokemon.style.display='block';
+        } else {
+            filteredPokemon.style.display = 'block';
 
         }
     })
+}
+
+function setPokemon1MovestoButtons() {
+    pokemon1Buttons[0].onclick = function () {
+        makeMoveRoundByRound(1, 1, player1Pokemons[indexPokemon1].special_attack);
+    };
+    pokemon1Buttons[1].onclick = function () {
+        makeMoveRoundByRound(1, 2, player1Pokemons[indexPokemon1].special_defense);
+    };
+    pokemon1Buttons[2].onclick = function () {
+        makeMoveRoundByRound(1, 3, player1Pokemons[indexPokemon1].attack);
+    };
+
+}
+
+function setPokemon2MovestoButtons() {
+
+    pokemon2Buttons[0].onclick = function () {
+        makeMoveRoundByRound(2, 1, player2Pokemons[indexPokemon2].special_attack);
+    };
+    pokemon2Buttons[1].onclick = function () {
+        makeMoveRoundByRound(2, 2, player2Pokemons[indexPokemon2].special_defense);
+    };
+    pokemon2Buttons[2].onclick = function () {
+        makeMoveRoundByRound(2, 3, player2Pokemons[indexPokemon2].attack);
+    };
+}
+
+function makeMoveRoundByRound(playerNumber, moveNumber, attackPoints) {
+    if (indexPokemon1 < 3 && indexPokemon2 < 3) {
+        if (round % 2 === 1) {
+            if (firstPlayer === playerNumber) {
+                applyMove(playerNumber, moveNumber, attackPoints)
+                round++;
+
+            }
+        } else {
+            if (firstPlayer !== playerNumber) {
+                applyMove(playerNumber, moveNumber, attackPoints)
+                round++;
+
+            }
+        }
+    } else {
+        if (indexPokemon1 >= 3) {
+            alert('Player 2 won');
+        } else {
+            alert('Player 1 won')
+        }
+    }
 }

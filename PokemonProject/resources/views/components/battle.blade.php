@@ -21,12 +21,12 @@
                 <div class="moves">
                     <h3>Choose Your Move:</h3>
                     <form>
-                        <button type="button" onclick="updateHealth('charmander', 10)" class="btn btn-primary">Ember
+                        <button  type="button"  class="btn btn-primary pokemon1Buttons">Special Attack
                         </button>
-                        <button type="button" onclick="updateHealth('charmander', 15)" class="btn btn-primary">
-                            Flamethrower
+                        <button type="button"  class="btn btn-primary pokemon1Buttons">
+                            Special Defense
                         </button>
-                        <button type="button" onclick="updateHealth('charmander', 20)" class="btn btn-primary">Fire Spin
+                        <button type="button"  class="btn btn-primary pokemon1Buttons">Attack
                         </button>
                     </form>
                 </div>
@@ -51,12 +51,12 @@
                 <div class="moves">
                     <h3>Choose Your Attack:</h3>
                     <form>
-                        <button type="button" onclick="updateHealth('squirtle', 8)" class="btn btn-primary">Bubble
+                        <button type="button"  class="btn btn-primary pokemon2Buttons">Special Attack
                         </button>
-                        <button type="button" onclick="updateHealth('squirtle', 12)" class="btn btn-primary">Water Gun
+                        <button type="button"  class="btn btn-primary pokemon2Buttons">Special Defense
                         </button>
-                        <button type="button" onclick="updateHealth('squirtle', 16)" class="btn btn-primary">Hydro
-                            Pump
+                        <button type="button"  class="btn btn-primary pokemon2Buttons">Attack
+
                         </button>
                     </form>
                 </div>
