@@ -67,6 +67,9 @@
                 </button>
             </div>
             <div id="comment"></div>
+            <div  id="timer">
+                30
+            </div>
         </div>
     </div>
 </div>

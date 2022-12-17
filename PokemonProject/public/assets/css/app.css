@@ -29,11 +29,11 @@ tr{
     cursor: pointer;
 }
 
-.counter{
+#timer{
     color: #000000;
     position: relative;
-    left: 100%;
-    bottom: 20%;
+    left: 98%;
+    bottom: 30px;
     font-size: 4em;
 }
 .progressContent{

@@ -99,8 +99,28 @@ function chooseMode(idMode) {
         changeheadline(firstPlayer, 1);
         setPokemon1MovestoButtons();
         setPokemon2MovestoButtons();
+        startTimer()
     } else {
+        player1Pokemons = pokemons.slice(0, 3)
+        player2Pokemons = pokemons.slice(3, 6)
 
+
+        setupPokemonOnScreen(1, 0);
+        setupPokemonOnScreen(2, 0);
+        updateProgressBar(1, currentHealth1, health1);
+        updateProgressBar(2, currentHealth2, health2);
+
+        battleSelect.setAttribute('style', 'display: flex !important');
+        Array.from(progressContent).forEach((progress) => {
+            progress.style.marginBottom = '15%';
+        });
+        const randomNumber = Math.random();
+
+        // If the random number is less than 0.5, player 1 goes first, otherwise player 2 goes first
+        firstPlayer = randomNumber < 0.5 ? 1 : 2;
+        setPokemon1MovestoButtons();
+        setPokemon2MovestoButtons();
+        startTimer()
     }
 
 
@@ -439,6 +459,8 @@ function setPokemon2MovestoButtons() {
 }
 
 function makeMoveRoundByRound(playerNumber, moveNumber, attackPoints) {
+    clearInterval(timer);
+    startTimer();
     if (indexPokemon1 < 3 && indexPokemon2 < 3) {
         if (round % 2 === 1) {
             if (firstPlayer === playerNumber) {
@@ -460,4 +482,38 @@ function makeMoveRoundByRound(playerNumber, moveNumber, attackPoints) {
             alert('Player 1 won')
         }
     }
+}
+
+
+function onCounterEnd() {
+    if (indexPokemon1 > 2 || indexPokemon2 > 2) {
+        clearInterval(timer);
+    } else {
+        if (round % 2 === 1) {
+            alert(` Player ${firstPlayer} Lost`)
+        } else {
+            alert(` Player ${firstPlayer} Won`)
+        }
+    }
+
+}
+
+var timer;
+
+function startTimer() {
+    var seconds = 31;
+
+    timer = setInterval(function () {
+
+        seconds--;
+
+
+        document.getElementById("timer").innerHTML = seconds;
+
+
+        if (seconds <= 0) {
+            clearInterval(timer);
+            onCounterEnd()
+        }
+    }, 1000);
 }
