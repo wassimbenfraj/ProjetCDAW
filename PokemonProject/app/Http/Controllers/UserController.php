@@ -67,7 +67,7 @@ class UserController extends Controller
             'energy_id' => $energy->id,
         ]);
 
-        aut()->login($user);
+        auth()->login($user);
 
         return redirect('/')->with('message', 'User Created and logged In');
     }
