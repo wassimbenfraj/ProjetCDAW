@@ -25,20 +25,31 @@
         <div class="container">
             <div class="row mb--50 align-items-center">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <h3 id="headline" class="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Choose Your oponent</h3>
+                    <h3 id="headline" class="title mb--0" data-sal-delay="150" data-sal="slide-up"
+                        data-sal-duration="800">Choose Your oponent</h3>
                 </div>
             </div>
-           @include('components.chooseUser')
-           @include('components.battle')
-           @include('components.chooseMode')
-           @include('components.choosePokemon')
+            @include('components.chooseUser')
+            @include('components.battle')
+            @include('components.chooseMode')
+            @include('components.choosePokemon')
+            @include('components.gameFinished')
         </div>
     </div>
 @endsection
 
 @section('script')
-            <script>
-                var pokemons = {!! json_encode($pokemons->toArray(), JSON_HEX_TAG) !!};
-            </script>
+    <script>
+        var user = {
+            id: {{auth()->user()->id}},
+            name: '{{auth()->user()->name}}',
+            energies: {!! json_encode(auth()->user()->energies, JSON_HEX_TAG) !!},
+            level: '{{auth()->user()->level}}',
+        }
+        console.log(user);
+        var pokemons = {!! json_encode($pokemons->toArray(), JSON_HEX_TAG) !!};
+        var pokemons1 = pokemons.filter(pokemon => pokemon.level <= user.level && user.energies.some(energy => pokemon.energy.name === energy.name))
+
+    </script>
     <script src="assets/js/vendor/battle.js"></script>
 @endsection

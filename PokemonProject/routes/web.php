@@ -40,5 +40,5 @@ Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
 
 //              User Controller
 
-Route::get('/combat', [\App\Http\Controllers\CombatController::class, 'index']);
+Route::get('/combat', [\App\Http\Controllers\CombatController::class, 'index'])->middleware('auth');
 

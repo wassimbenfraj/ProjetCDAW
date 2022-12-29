@@ -8,6 +8,10 @@ modeSelect.style.display = 'none';
 // battle selection interface
 var battleSelect = document.getElementById('battleSelect');
 
+// Game Finished interface
+var gameFinished = document.getElementById('gameFinished');
+gameFinished.style.display = 'none';
+
 // Pokémon Select Interface
 var pokemonSelect = document.querySelector('#pokemonSelect');
 var filteredPokemons = pokemonSelect.getElementsByClassName('col');
@@ -23,11 +27,13 @@ nextButton.style.display = 'none';
 var CommentBox = document.getElementById('comment');
 
 var headline = document.getElementById('headline');
+var headlineResult = document.getElementById('headlineResult');
 
 
 var pokemon1Buttons = document.getElementsByClassName('pokemon1Buttons');
 var pokemon2Buttons = document.getElementsByClassName('pokemon2Buttons');
 
+var pokemons2 = [];
 
 var player1Pokemons = []
 var player2Pokemons = []
@@ -41,7 +47,7 @@ var tour = 1;
 var firstPlayer;
 var comment = '';
 var i = 0;
-
+var user2;
 var health1;
 var currentHealth1;
 var health2;
@@ -57,7 +63,16 @@ var progressContent = document.getElementsByClassName('progress');
 var image1 = document.getElementById('pokemonImage1');
 var image2 = document.getElementById('pokemonImage2');
 
-function chooseUser(idUser) {
+function chooseUser(userId, userName, energies, level = 1) {
+    user2 = {
+        id: userId,
+        name: 'user2',
+        energies: energies,
+        level: level
+    }
+
+
+    pokemons2 = pokemons.filter(pokemon => pokemon.level <= user2.level && user2.energies.some(energy => pokemon.energy.name === energy.name))
     userSelect.style.display = 'none';
     modeSelect.style.display = 'block';
     headline.innerText = "Choose Your Mode"
@@ -67,6 +82,7 @@ function chooseMode(idMode) {
     userSelect.style.display = 'none';
     modeSelect.style.display = 'none';
     headline.style.display = 'none';
+    gameFinished.style.display = 'none';
 
 
     if (idMode === 1) {
@@ -96,6 +112,13 @@ function chooseMode(idMode) {
 
         // If the random number is less than 0.5, player 1 goes first, otherwise player 2 goes first
         firstPlayer = randomNumber < 0.5 ? 1 : 2;
+        if (firstPlayer === 1) {
+            displayPokemonList(pokemons1);
+            changeheadline(1,indexPokemon1)
+        } else {
+            displayPokemonList(pokemons2);
+            changeheadline(2,indexPokemon2)
+        }
         setPokemon1MovestoButtons();
         setPokemon2MovestoButtons();
     } else {
@@ -122,7 +145,7 @@ function chooseMode(idMode) {
         changeheadlineOnCombat(firstPlayer);
         if (firstPlayer === 1) {
             startTimer(2)
-        }else{
+        } else {
             startTimer(1)
         }
     }
@@ -185,10 +208,14 @@ function makeMove() {
         }
         round++;
     } else {
+        battleSelect.style.display = 'none';
+        headline.style.display = 'none';
+        gameFinished.style.display = 'block';
+
         if (indexPokemon1 >= 3) {
-            alert('Player 2 won');
+            headlineResult.innerText = `${user2.name} won the combat`;
         } else {
-            alert('Player 1 won')
+            headlineResult.innerText = `${user.name} won the combat`;
         }
     }
 }
@@ -207,10 +234,13 @@ function setupPokemonOnScreen(player, index) {
 
         }
     } else {
+        battleSelect.style.display = 'none';
+        headline.style.display = 'none';
+        gameFinished.style.display = 'block';
         if (indexPokemon1 >= 3) {
-            alert('Player 2 won');
+            headlineResult.innerText = `${user2.name} won the combat`;
         } else {
-            alert('Player 1 won')
+            headlineResult.innerText = `${user.name} won the combat`;
         }
     }
 }
@@ -227,7 +257,7 @@ function applyMove(player, moveNumber, movePoints) {
                 // console.log(` Player 1 attacked with ${movePoints} Points`);
                 // console.log(` Player 2  ${defenseBlock2} Points of the attack`);
                 // console.log(` Player 2 hit with ${movePoints - defenseBlock2} Points \n `);
-                comment = ` Player 1 attacked with ${movePoints} Points. Player 2 blocked ${defenseBlock2} Points of the attack `
+                comment = ` ${user.name} attacked with ${movePoints} Points. ${user2.name} blocked ${defenseBlock2} Points of the attack `
                 CommentBox.innerHTML = '';
                 i = 0;
                 typing();
@@ -243,7 +273,7 @@ function applyMove(player, moveNumber, movePoints) {
                 break;
             case 2:
                 defenseBlock1 = movePoints;
-                comment = `Player 1 chose special defense ability and will block the next attack with ${defenseBlock1} defense Points`
+                comment = `${user.name} chose special defense ability and will block the next attack with ${defenseBlock1} defense Points`
                 CommentBox.innerHTML = '';
                 i = 0;
                 typing();
@@ -254,7 +284,7 @@ function applyMove(player, moveNumber, movePoints) {
                 } else {
                     currentHealth2 -= movePoints - defenseBlock2;
                 }
-                comment = ` Player 1 attacked with ${movePoints} Points. Player 2 blocked ${defenseBlock2} Points of the attack `
+                comment = ` ${user.name} attacked with ${movePoints} Points. ${user2.name} blocked ${defenseBlock2} Points of the attack `
                 CommentBox.innerHTML = '';
                 i = 0;
                 typing();
@@ -279,7 +309,7 @@ function applyMove(player, moveNumber, movePoints) {
                 // console.log(` Player 2 attacked with ${movePoints} Points`);
                 // console.log(` Player 1 blocked the attack with ${defenseBlock1} Points`);
                 // console.log(` Player 1 hit with ${movePoints - defenseBlock1} Points \n `);
-                comment = ` Player 2 attacked with ${movePoints} Points. Player 1 blocked ${defenseBlock1} Points of the attack `
+                comment = ` ${user2.name} attacked with ${movePoints} Points. ${user.name} blocked ${defenseBlock1} Points of the attack `
                 CommentBox.innerHTML = '';
 
                 i = 0;
@@ -297,7 +327,7 @@ function applyMove(player, moveNumber, movePoints) {
             case 2:
                 defenseBlock2 = movePoints;
                 // console.log(` Player 2 chose special defense ability and will block the next attack with ${defenseBlock2} defense Points`);
-                comment = `Player 2 chose special defense ability and will block the next attack with ${defenseBlock2} defense Points`
+                comment = `${user2.name} chose special defense ability and will block the next attack with ${defenseBlock2} defense Points`
                 CommentBox.innerHTML = '';
                 i = 0;
                 typing();
@@ -311,7 +341,7 @@ function applyMove(player, moveNumber, movePoints) {
                 // console.log(` Player 2 attacked with ${movePoints} Points`);
                 // console.log(` Player 1 blocked the attack with ${defenseBlock1} Points`);
                 // console.log(` Player 1 hit with ${movePoints - defenseBlock1} Points \n `);
-                comment = ` Player 2 attacked with ${movePoints} Points. Player 1 blocked ${defenseBlock1} Points of the attack `
+                comment = ` ${user2.name} attacked with ${movePoints} Points. ${user.name} blocked ${defenseBlock1} Points of the attack `
                 CommentBox.innerHTML = '';
                 i = 0;
                 typing();
@@ -362,8 +392,8 @@ function choosePokemons(pokemonName) {
             //player
 
             player1Pokemons.push(pokemon);
-
             indexPokemon1++;
+            displayPokemonList(pokemons2);
             changeheadline(2, indexPokemon2);
         } else {
             //player2
@@ -371,6 +401,7 @@ function choosePokemons(pokemonName) {
             player2Pokemons.push(pokemon);
 
             indexPokemon2++;
+            displayPokemonList(pokemons1);
             changeheadline(1, indexPokemon1);
         }
     } else {
@@ -380,6 +411,7 @@ function choosePokemons(pokemonName) {
             player2Pokemons.push(pokemon);
 
             indexPokemon2++;
+            displayPokemonList(pokemons1);
             changeheadline(1, indexPokemon1);
 
         } else {
@@ -388,6 +420,7 @@ function choosePokemons(pokemonName) {
             player1Pokemons.push(pokemon);
 
             indexPokemon1++;
+            displayPokemonList(pokemons2);
             changeheadline(2, indexPokemon2);
         }
     }
@@ -414,7 +447,7 @@ function choosePokemons(pokemonName) {
         changeheadlineOnCombat(firstPlayer);
         if (firstPlayer === 1) {
             startTimer(2)
-        }else{
+        } else {
             startTimer(1)
         }
     }
@@ -423,12 +456,21 @@ function choosePokemons(pokemonName) {
 }
 
 function changeheadline(playerNumber, pokemonIndex) {
-    if (pokemonIndex < 4)
-        headline.innerText = `Player ${playerNumber} choose your ${pokemonIndex} Pokemon`
+    if (pokemonIndex < 4) {
+        if (playerNumber === 1) {
+            headline.innerText = `${user.name} choose your ${pokemonIndex} Pokemon`;
+        } else {
+            headline.innerText = `${user2.name} choose your ${pokemonIndex} Pokemon`;
+        }
+    }
 }
 
 function changeheadlineOnCombat(playerNumber) {
-        headline.innerText = `Player ${playerNumber} turn`
+    if (playerNumber === 1) {
+        headline.innerText = `${user.name} turn`;
+    } else {
+        headline.innerText = `${user2.name} turn`;
+    }
 }
 
 function filterPokemonsSelected(pokemonName) {
@@ -437,9 +479,6 @@ function filterPokemonsSelected(pokemonName) {
         var title = text[0].textContent;
         if (title.toLowerCase() === pokemonName) {
             filteredPokemon.parentNode.removeChild(filteredPokemon);
-        } else {
-            filteredPokemon.style.display = 'block';
-
         }
     })
 }
@@ -473,7 +512,7 @@ function setPokemon2MovestoButtons() {
 function makeMoveRoundByRound(playerNumber, moveNumber, attackPoints) {
     if (playerNumber === 1) {
         changeheadlineOnCombat(2);
-    }else{
+    } else {
         changeheadlineOnCombat(1);
     }
 
@@ -496,10 +535,14 @@ function makeMoveRoundByRound(playerNumber, moveNumber, attackPoints) {
             }
         }
     } else {
+        battleSelect.style.display = 'none';
+        headline.style.display = 'none';
+        gameFinished.style.display = 'block';
         if (indexPokemon1 >= 3) {
-            alert('Player 2 won');
+            headlineResult.innerText = `${user2.name} won the combat`;
+
         } else {
-            alert('Player 1 won')
+            headlineResult.innerText = `${user.name} won the combat`;
         }
     }
 }
@@ -514,7 +557,7 @@ function onCounterEnd(playerNumber) {
             changeheadlineOnCombat(1);
             clearInterval(timer);
             startTimer(2);
-        }else{
+        } else {
             changeheadlineOnCombat(2);
             clearInterval(timer);
             startTimer(1);
@@ -546,4 +589,21 @@ function startTimer(playerNumber) {
             onCounterEnd(playerNumber)
         }
     }, 1000);
+}
+
+
+function displayPokemonList(PokemonList) {
+
+    Array.from(filteredPokemons).forEach(function (currentPokemon) {
+        var text = currentPokemon.getElementsByClassName('product-name');
+        var title = text[0].textContent;
+        if (PokemonList.some(Pokemon => Pokemon.name === title)) {
+            currentPokemon.style.display = 'block';
+
+        } else {
+            currentPokemon.style.display = 'none';
+
+        }
+    })
+
 }
