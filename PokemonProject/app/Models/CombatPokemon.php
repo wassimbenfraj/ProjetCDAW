@@ -10,9 +10,11 @@ class CombatPokemon extends Model
 {
     use HasFactory;
 
+    protected $table = 'combat_pokemons';
+
     protected $fillable = [
         'combat_id',
-        'pokemons_id',
+        'pokemon_id',
         'user_id',
     ];
     public function user(): BelongsTo

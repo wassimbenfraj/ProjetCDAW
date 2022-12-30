@@ -16,7 +16,8 @@ class PokemonController extends Controller
     }
     public function show(Request $request){
         return view('pokemons', [
-            'pokemons' => \App\Models\Pokemon::with('energy')->get()
+            'pokemons' => \App\Models\Pokemon::with('energy')->get(),
+            'energies' => \App\Models\Energy::all()
         ]);
     }
     public function sortPokemons(Request $request){

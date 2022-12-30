@@ -38,14 +38,9 @@
                     <div
                         class="button-group isotop-filter filters-button-group d-flex justify-content-start justify-content-lg-end mt_md--30 mt_sm--30">
                         <button data-filter="*" class="is-checked"><span class="filter-text">All Items</span></button>
-                        <button data-filter=".fire"><span class="filter-text">Fire</span></button>
-                        <button data-filter=".grass"><span class="filter-text">Grass</span></button>
-                        <button data-filter=".water"><span class="filter-text">Water</span></button>
-                        <button data-filter=".bug"><span class="filter-text">Bug</span></button>
-                        <button data-filter=".normal"><span class="filter-text">Normal</span></button>
-                        <button data-filter=".poison"><span class="filter-text">Poison</span></button>
-                        <button data-filter=".electric"><span class="filter-text">Electric</span></button>
-                        <button data-filter=".fairy"><span class="filter-text">Fairy</span></button>
+                        @foreach($energies as $energy)
+                            <button data-filter=".{{$energy->name}}"><span class="filter-text">{{$energy->name}}</span></button>
+                        @endforeach
                     </div>
                 </div>
 
@@ -57,11 +52,11 @@
             </div>
         </div>
     </div>
-{{--    <div class="container">--}}
-{{--        <div class="d-flex justify-content-center">--}}
-{{--            {{$pokemons->links()}}--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    {{--    <div class="container">--}}
+    {{--        <div class="d-flex justify-content-center">--}}
+    {{--            {{$pokemons->links()}}--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
 @endsection
 
 @section('script')
