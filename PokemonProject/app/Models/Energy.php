@@ -26,7 +26,7 @@ class Energy extends Model
     public static function fetchEnergies()
     {
         $energies = [];
-        for ($i = 1; $i < 50; $i++) {
+        for ($i = 1; $i < 100; $i++) {
             $id = $i;
             $data = file_get_contents(self::$base_url . $id . '/');
             $pokemonData = json_decode($data);
