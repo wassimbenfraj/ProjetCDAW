@@ -17,6 +17,7 @@ class CreateCombatPokemonTable extends Migration
             $table->id();
             $table->bigInteger('combat_id')->unsigned();
             $table->bigInteger('pokemon_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('pokemon_id')
                 ->references('id')
                 ->on('pokemons')
@@ -25,6 +26,11 @@ class CreateCombatPokemonTable extends Migration
             $table->foreign('combat_id')
                 ->references('id')
                 ->on('combats')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->integer('health');

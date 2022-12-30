@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class CombatUser extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'combat_id',
+        'user_id',
+    ];
 }

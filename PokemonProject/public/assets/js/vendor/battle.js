@@ -39,8 +39,8 @@ var player1Pokemons = []
 var player2Pokemons = []
 
 
-var indexPokemon1 = 1;
-var indexPokemon2 = 1;
+var indexPokemon1 = 0;
+var indexPokemon2 = 0;
 
 var round = 1;
 var tour = 1;
@@ -52,6 +52,7 @@ var health1;
 var currentHealth1;
 var health2;
 var currentHealth2;
+var mode ;
 
 var defenseBlock1 = 0;
 var defenseBlock2 = 0;
@@ -79,6 +80,7 @@ function chooseUser(userId, userName, energies, level = 1) {
 }
 
 function chooseMode(idMode) {
+    mode = idMode;
     userSelect.style.display = 'none';
     modeSelect.style.display = 'none';
     headline.style.display = 'none';
@@ -86,8 +88,9 @@ function chooseMode(idMode) {
 
 
     if (idMode === 1) {
-        player1Pokemons = pokemons.slice(0, 3)
-        player2Pokemons = pokemons.slice(3, 6)
+        player1Pokemons = pokemons1.slice(0, 3)
+        player2Pokemons = pokemons2.slice(0, 3)
+
         Array.from(movesSelect).forEach((moves) => {
             moves.style.display = 'none';
         });
@@ -106,6 +109,8 @@ function chooseMode(idMode) {
         firstPlayer = randomNumber < 0.5 ? 1 : 2;
 
     } else if (idMode === 2) {
+        indexPokemon1 = 1;
+        indexPokemon2 = 1;
         headline.style.display = 'block'
         pokemonSelect.style.display = 'block';
         const randomNumber = Math.random();
@@ -123,8 +128,8 @@ function chooseMode(idMode) {
         setPokemon2MovestoButtons();
     } else {
         headline.style.display = 'block'
-        player1Pokemons = pokemons.slice(0, 3)
-        player2Pokemons = pokemons.slice(3, 6)
+        player1Pokemons = pokemons1.slice(0, 3)
+        player2Pokemons = pokemons2.slice(0, 3)
 
 
         setupPokemonOnScreen(1, 0);
@@ -155,6 +160,7 @@ function chooseMode(idMode) {
 
 
 function makeMove() {
+
     if (indexPokemon1 < 3 && indexPokemon2 < 3) {
         if (round % 2 === 1) {
             if (firstPlayer === 1) {
@@ -214,8 +220,10 @@ function makeMove() {
 
         if (indexPokemon1 >= 3) {
             headlineResult.innerText = `${user2.name} won the combat`;
+            saveCombat(user2.id)
         } else {
             headlineResult.innerText = `${user.name} won the combat`;
+            saveCombat(user.id)
         }
     }
 }
@@ -224,11 +232,11 @@ function setupPokemonOnScreen(player, index) {
     if (indexPokemon1 < 3 && indexPokemon2 < 3) {
         if (player === 1) {
 
-            health1 = player1Pokemons[index].hp * player1Pokemons[index].level;
+            health1 = player1Pokemons[index].hp * player1Pokemons[index].level + 100;
             currentHealth1 = health1;
             image1.src = player1Pokemons[index].image;
         } else {
-            health2 = player2Pokemons[index].hp * player2Pokemons[index].level;
+            health2 = player2Pokemons[index].hp * player2Pokemons[index].level +100;
             currentHealth2 = health2;
             image2.src = player2Pokemons[index].image;
 
@@ -239,8 +247,10 @@ function setupPokemonOnScreen(player, index) {
         gameFinished.style.display = 'block';
         if (indexPokemon1 >= 3) {
             headlineResult.innerText = `${user2.name} won the combat`;
+            saveCombat(user2.id)
         } else {
             headlineResult.innerText = `${user.name} won the combat`;
+            saveCombat(user.id)
         }
     }
 }
@@ -425,6 +435,7 @@ function choosePokemons(pokemonName) {
         }
     }
     round++;
+
     if (pokemons1.length < 3 || pokemons2.length < 3) {
         headline.innerText = "there is not enough pokemons matching the user profile Criterias";
     }
@@ -542,9 +553,10 @@ function makeMoveRoundByRound(playerNumber, moveNumber, attackPoints) {
         gameFinished.style.display = 'block';
         if (indexPokemon1 >= 3) {
             headlineResult.innerText = `${user2.name} won the combat`;
-
+            saveCombat(user2.id)
         } else {
             headlineResult.innerText = `${user.name} won the combat`;
+            saveCombat(user.id)
         }
     }
 }
@@ -595,7 +607,6 @@ function startTimer(playerNumber) {
 
 
 function displayPokemonList(PokemonList) {
-    console.log(PokemonList);
     if (PokemonList.length < 3) {
         Array.from(filteredPokemons).forEach(function (currentPokemon) {
             currentPokemon.style.display = 'none';
@@ -617,4 +628,24 @@ function displayPokemonList(PokemonList) {
     }
 
 
+}
+
+
+function saveCombat(winnerId) {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        /* the route pointing to the post function */
+        url: '/combat',
+        type: 'POST',
+        /* send the csrf-token and the input to the controller */
+        data: {user1: user.id , user2: user2.id , winner :winnerId, mode:mode , pokemons1 : player1Pokemons , pokemons2: player2Pokemons},
+        /* remind that 'data' is the response of the AjaxController */
+        success: function (data) {
+            console.log(1);
+        }
+    });
 }

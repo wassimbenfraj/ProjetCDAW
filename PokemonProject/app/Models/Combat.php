@@ -10,11 +10,18 @@ class Combat extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'mode',
+        'user_id',
+        'date',
+        'status',
+    ];
 
     public function pokemons()
     {
-        return $this->belongsToMany(Pokemon::class,'combat_pokemons');
+        return $this->belongsToMany(Pokemon::class, 'combat_pokemons');
     }
+
     public function users()
     {
         return $this->belongsToMany(User::class, 'combat_users');

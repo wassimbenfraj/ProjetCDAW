@@ -58,9 +58,18 @@ class UserController extends Controller
 
         $formfields['password'] = bcrypt($formfields['password']);
         $formfields['level'] = 1 ;
-        $energy = DB::table('energies')
-            ->inRandomOrder()
-            ->first();
+        $pokemons = [];
+        while (count($pokemons) < 3) {
+            $energy = DB::table('energies')
+                ->inRandomOrder()
+                ->first();
+
+            $pokemons = DB::table('pokemons')
+                ->where('level', '=', 1)
+                ->where('energy_id', '=', $energy->id)
+                ->get();
+        }
+
         $user = User::create($formfields);
         EnergyUser::create([
             'user_id' => $user->id,

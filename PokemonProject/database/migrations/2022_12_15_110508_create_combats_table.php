@@ -15,7 +15,7 @@ class CreateCombatsTable extends Migration
     {
         Schema::create('combats', function (Blueprint $table) {
             $table->id();
-            $table->string('mode');
+            $table->integer('mode');
             $table->dateTime('date');
             $table->string('status');
             $table->foreignId('user_id')

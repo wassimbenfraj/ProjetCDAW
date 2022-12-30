@@ -38,7 +38,8 @@ Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
 
 
 
-//              User Controller
+//              Combat Controller
 
 Route::get('/combat', [\App\Http\Controllers\CombatController::class, 'index'])->middleware('auth');
+Route::post('/combat', [\App\Http\Controllers\CombatController::class, 'save'])->middleware('auth');
 

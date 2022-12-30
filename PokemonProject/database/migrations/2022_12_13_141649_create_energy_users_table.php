@@ -14,6 +14,7 @@ class CreateEnergyUsersTable extends Migration
     public function up()
     {
         Schema::create('energy_users', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('energy_id')->unsigned();
             $table->foreign('user_id')

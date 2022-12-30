@@ -61,4 +61,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Combat::class,'user_id');
     }
+    public function allPokemonsPlayed(): HasMany
+    {
+        return $this->hasMany(CombatPokemon::class,'user_id');
+    }
 }
