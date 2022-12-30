@@ -66,7 +66,7 @@ var image2 = document.getElementById('pokemonImage2');
 function chooseUser(userId, userName, energies, level = 1) {
     user2 = {
         id: userId,
-        name: 'user2',
+        name: userName,
         energies: energies,
         level: level
     }
@@ -113,11 +113,11 @@ function chooseMode(idMode) {
         // If the random number is less than 0.5, player 1 goes first, otherwise player 2 goes first
         firstPlayer = randomNumber < 0.5 ? 1 : 2;
         if (firstPlayer === 1) {
-            displayPokemonList(pokemons1);
             changeheadline(1,indexPokemon1)
+            displayPokemonList(pokemons1);
         } else {
-            displayPokemonList(pokemons2);
             changeheadline(2,indexPokemon2)
+            displayPokemonList(pokemons2);
         }
         setPokemon1MovestoButtons();
         setPokemon2MovestoButtons();
@@ -425,7 +425,9 @@ function choosePokemons(pokemonName) {
         }
     }
     round++;
-
+    if (pokemons1.length < 3 || pokemons2.length < 3) {
+        headline.innerText = "there is not enough pokemons matching the user profile Criterias";
+    }
     filterPokemonsSelected(pokemonName);
 
     if (player1Pokemons.length > 2 && player2Pokemons.length > 2) {
@@ -593,17 +595,26 @@ function startTimer(playerNumber) {
 
 
 function displayPokemonList(PokemonList) {
-
-    Array.from(filteredPokemons).forEach(function (currentPokemon) {
-        var text = currentPokemon.getElementsByClassName('product-name');
-        var title = text[0].textContent;
-        if (PokemonList.some(Pokemon => Pokemon.name === title)) {
-            currentPokemon.style.display = 'block';
-
-        } else {
+    console.log(PokemonList);
+    if (PokemonList.length < 3) {
+        Array.from(filteredPokemons).forEach(function (currentPokemon) {
             currentPokemon.style.display = 'none';
+        });
+        headline.innerText = "there is not enough pokemons matching the user profile Criterias";
+    } else {
+        Array.from(filteredPokemons).forEach(function (currentPokemon) {
+            var text = currentPokemon.getElementsByClassName('product-name');
+            var title = text[0].textContent;
+            if (PokemonList.some(Pokemon => Pokemon.name === title)) {
+                currentPokemon.style.display = 'block';
 
-        }
-    })
+            } else {
+                currentPokemon.style.display = 'none';
+
+            }
+        });
+
+    }
+
 
 }
