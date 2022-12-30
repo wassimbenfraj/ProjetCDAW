@@ -21,6 +21,10 @@ class UserController extends Controller
         return view('signup');
     }
 
+    public function show(Request $request){
+        return view('profile');
+    }
+
     public function logout(Request $request){
         auth()->logout();
 

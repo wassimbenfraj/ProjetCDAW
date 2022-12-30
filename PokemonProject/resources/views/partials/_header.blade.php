@@ -67,7 +67,8 @@
                         <ul>
 
                             {{--                        <li>--}}
-                            <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
+{{--                            <a href="javascript: void(0);" data-theme="dark" class="setColor dark">--}}
+                            <a href="/profile" data-theme="dark" class="setColor dark">
                                 {{auth()->user()->name}}
                                 {{--                                <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">--}}
                             </a>

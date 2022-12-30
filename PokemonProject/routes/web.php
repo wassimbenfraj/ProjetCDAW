@@ -35,6 +35,9 @@ Route::post('/users', [\App\Http\Controllers\UserController::class, 'store']);
 Route::post('/users/authenticate', [\App\Http\Controllers\UserController::class, 'authenticate']);
 //user logout
 Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
+// user profile
+Route::get('/profile', [\App\Http\Controllers\UserController::class, 'show'])->middleware('auth');
+
 
 
 
