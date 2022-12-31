@@ -19,7 +19,7 @@
                     <div class="author-wrapper">
                         <div class="author-inner">
                             <div class="user-thumbnail">
-                                <img src="assets/images/slider/banner-06.png" alt="">
+                                <img src="{{asset('storage/'. auth()->user()->image)}}" alt="">
                             </div>
                             <div class="rn-author-info-content">
                                 <h4 class="title">{{auth()->user()->name}}</h4>

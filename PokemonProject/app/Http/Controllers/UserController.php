@@ -56,9 +56,14 @@ class UserController extends Controller
     public function store(Request $request){
         $formfields = $request->validate([
            'name' => ['required','min:3'],
+           'image' => 'required|mimes:jpg,jpeg,png',
            'email' => ['required','email', Rule::unique('users','email')],
            'password' => 'required|confirmed|min:6'
         ]);
+
+        if ($request->hasFile('image')) {
+            $formfields['image'] = $request->file('image')->store('avatar', 'public');
+        }
 
         $formfields['password'] = bcrypt($formfields['password']);
         $formfields['level'] = 1 ;
@@ -73,7 +78,6 @@ class UserController extends Controller
                 ->where('energy_id', '=', $energy->id)
                 ->get();
         }
-
         $user = User::create($formfields);
         EnergyUser::create([
             'user_id' => $user->id,
