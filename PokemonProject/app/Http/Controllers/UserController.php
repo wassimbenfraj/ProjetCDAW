@@ -6,6 +6,7 @@ use App\Models\EnergyUser;
 use App\Models\Pokemon;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
@@ -25,6 +26,10 @@ class UserController extends Controller
         return view('profile');
     }
 
+    public function showEdit(){
+        return view('editProfile');
+    }
+
     public function logout(Request $request){
         auth()->logout();
 
@@ -34,7 +39,6 @@ class UserController extends Controller
         return redirect('/')->with('message', 'You have been logged out!');
 
     }
-
     public function authenticate(Request $request){
 
         $formfields = $request->validate([
@@ -51,6 +55,28 @@ class UserController extends Controller
         return back()->withErrors(['email' => 'Invalid Credentials',
         ])->onlyInput('email');
     }
+
+    public function update(Request $request){
+        $formfields = $request->validate([
+            'email' => ['required','email'],
+            'oldPass' => 'required',
+            'password' => 'required|confirmed|min:6',
+        ]);
+        $checkFields = [
+          'email' => $formfields['email'] ,
+          'password' => $formfields['oldPass']
+        ];
+        if (auth()->attempt($checkFields)) {
+            $user = \App\Models\User::with('combatsWon')
+                ->where('id', '=', Auth::id())
+                ->first();
+            $user->update([
+                'password' => bcrypt($formfields['password'])
+            ]);
+            return redirect('/profile/edit')->with('message', 'success');
+        }
+    }
+
 
 
     public function store(Request $request){

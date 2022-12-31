@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="author-button-area">
                                     <a href="/profile/edit" class="btn at-follw follow-button edit-btn"> <span class="btn at-follw follow-button"><i
-                                            data-feather="edit"></i> Edit Profile</span></a>
+                                            data-feather="edit"></i> Change Password</span></a>
 
                                 </div>
                             </div>

@@ -31,12 +31,15 @@ Route::get('/login', [\App\Http\Controllers\UserController::class, 'login'])->na
 Route::get('/signup', [\App\Http\Controllers\UserController::class, 'signup'])->middleware('guest');
 //register user
 Route::post('/users', [\App\Http\Controllers\UserController::class, 'store']);
+//update user Password
+Route::post('/users/update', [\App\Http\Controllers\UserController::class, 'update']);
 //user authentication
 Route::post('/users/authenticate', [\App\Http\Controllers\UserController::class, 'authenticate']);
 //user logout
 Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
 // user profile
 Route::get('/profile', [\App\Http\Controllers\UserController::class, 'show'])->middleware('auth');
+Route::get('/profile/edit', [\App\Http\Controllers\UserController::class, 'showEdit'])->middleware('auth');
 
 
 
