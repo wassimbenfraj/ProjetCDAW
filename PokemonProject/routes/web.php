@@ -50,3 +50,5 @@ Route::get('/combat', [\App\Http\Controllers\CombatController::class, 'index'])-
 Route::post('/combat', [\App\Http\Controllers\CombatController::class, 'save'])->middleware('auth');
 Route::get('/combat/{combat}', [\App\Http\Controllers\CombatController::class, 'replay'])->middleware('auth');
 
+// Stats
+Route::get('/stats', [\App\Http\Controllers\UserController::class, 'stats']);

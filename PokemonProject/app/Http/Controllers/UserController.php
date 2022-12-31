@@ -77,6 +77,17 @@ class UserController extends Controller
         }
     }
 
+    public function stats(Request $request){
+        $users = \App\Models\User::with('combats')
+            ->with('combatsWon')
+            ->get();
+        $users = $users->toArray();
+        usort($users, function($a, $b) {return count($a['combats_won']) < count($b['combats_won']);});
+        return view('stats', [
+            'users' => $users
+        ]);
+
+    }
 
 
     public function store(Request $request){

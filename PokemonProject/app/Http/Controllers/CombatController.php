@@ -18,7 +18,6 @@ class CombatController extends Controller
     public function index(Request $request)
     {
 
-
         return view('combat', [
             'users' => \App\Models\User::with('combats')
                 ->with('combatsWon')
