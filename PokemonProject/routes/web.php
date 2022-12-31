@@ -37,7 +37,10 @@ Route::post('/users/authenticate', [\App\Http\Controllers\UserController::class,
 Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
 // user profile
 Route::get('/profile', [\App\Http\Controllers\UserController::class, 'show'])->middleware('auth');
-
+//stats
+Route::get('/stats', function (Request $request) {
+    return view('stats');
+});
 
 
 
