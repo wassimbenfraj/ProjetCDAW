@@ -24,7 +24,7 @@
                     <h6 class="widget-title">PokéGame</h6>
                     <ul class="footer-list-one">
                         <li class="single-list"><a href="/combat">Lance-toi dans un combat</a></li>
-                        <li class="single-list"><a href="#">Trouve ton Pokémon préféré</a></li>
+                        <li class="single-list"><a href="/pokemons">Trouve ton Pokémon préféré</a></li>
                         <li class="single-list"><a href="#">Stats des joueurs</a></li>
                         <li class="single-list"><a href="#">Derniers combats</a></li>
 
