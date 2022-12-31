@@ -5,8 +5,8 @@
         <div class="header-inner">
             <div class="header-left">
                 <div class="logo-thumbnail logo-custom-css">
-                    <a class="logo-light" href="index.html"><img src="/assets/images/pokemon/logo-white.png"></a>
-                    <a class="logo-dark" href="index.html"><img src="/assets/images/pokemon/logo-dark.png"
+                    <a class="logo-light" href="/"><img src="/assets/images/pokemon/logo-white.png"></a>
+                    <a class="logo-dark" href="/"><img src="/assets/images/pokemon/logo-dark.png"
                         ></a>
                 </div>
                 <div class="mainmenu-wrapper">
@@ -16,7 +16,7 @@
                             <li><a href="/">Accueil</a></li>
                             <li><a href="/pokemons">Pokémon</a></li>
                             <li><a href="/combat">Combats</a></li>
-                            <li><a href="contact.html">Stats</a></li>
+                            <li><a href="/stats">Stats</a></li>
                         </ul>
                         <!-- End Mainmanu Nav -->
                     </nav>
@@ -70,10 +70,17 @@
 {{--                            <a href="javascript: void(0);" data-theme="dark" class="setColor dark">--}}
                             <a href="/profile" data-theme="dark" class="setColor dark">
                                 {{auth()->user()->name}}
-                                {{--                                <img class="Victor Image" src="/assets/images/icons/vector.svg" alt="Vector Images">--}}
+                                                                <img class="Victor Image" src="/assets/images/icons/vector.svg" alt="Vector Images">
                             </a>
+
                             {{--                        </li>--}}
                         </ul>
+
+                    </div>
+                    <div class="setting-option rn-icon-list notification-badge">
+                        <div class="icon-box">
+                            <a href="/profile"><img class="Victor Image" src="{{asset('storage/'. auth()->user()->image)}}" alt="Vector Images"></a>
+                        </div>
                     </div>
                 @endauth
 
