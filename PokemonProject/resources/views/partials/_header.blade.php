@@ -5,8 +5,8 @@
         <div class="header-inner">
             <div class="header-left">
                 <div class="logo-thumbnail logo-custom-css">
-                    <a class="logo-light" href="index.html"><img src="assets/images/pokemon/logo-white.png"></a>
-                    <a class="logo-dark" href="index.html"><img src="assets/images/pokemon/logo-dark.png"
+                    <a class="logo-light" href="index.html"><img src="/assets/images/pokemon/logo-white.png"></a>
+                    <a class="logo-dark" href="index.html"><img src="/assets/images/pokemon/logo-dark.png"
                         ></a>
                 </div>
                 <div class="mainmenu-wrapper">
@@ -70,7 +70,7 @@
 {{--                            <a href="javascript: void(0);" data-theme="dark" class="setColor dark">--}}
                             <a href="/profile" data-theme="dark" class="setColor dark">
                                 {{auth()->user()->name}}
-                                {{--                                <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">--}}
+                                {{--                                <img class="Victor Image" src="/assets/images/icons/vector.svg" alt="Vector Images">--}}
                             </a>
                             {{--                        </li>--}}
                         </ul>
@@ -87,8 +87,8 @@
     <div class="inner">
         <div class="header-top">
             <div class="logo logo-custom-css">
-                <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png"></a>
-                <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png"></a>
+                <a class="logo-light" href="index.html"><img src="/assets/images/logo/logo-white.png"></a>
+                <a class="logo-dark" href="index.html"><img src="/assets/images/logo/logo-dark.png"></a>
             </div>
             <div class="close-menu">
                 <button class="close-button">

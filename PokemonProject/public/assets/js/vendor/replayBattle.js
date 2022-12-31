@@ -27,9 +27,6 @@ var pokemon2Buttons = document.getElementsByClassName('pokemon2Buttons');
 
 var pokemons2 = [];
 
-var player1Pokemons = []
-var player2Pokemons = []
-
 
 var indexPokemon1 = 0;
 var indexPokemon2 = 0;

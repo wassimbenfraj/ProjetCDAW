@@ -22,7 +22,7 @@ class CombatController extends Controller
         return view('combat', [
             'users' => \App\Models\User::with('combats')
                 ->with('combatsWon')
-                ->where('id','!=', Auth::id())
+                ->where('id', '!=', Auth::id())
                 ->get(),
             'pokemons' => \App\Models\Pokemon::inRandomOrder()
                 ->with('energy')
@@ -30,17 +30,46 @@ class CombatController extends Controller
         ]);
     }
 
+    public function replay( Combat $combat)
+    {
+
+        $pokemons1 = [];
+        $pokemons2 = [];
+
+        if ($combat->users[0]->id == Auth::id()) {
+            $user2 = $combat->users[1];
+        } else {
+            $user2 = $combat->users[0];
+        }
+
+        foreach ($combat->pokemons as $pokemon) {
+            if ($pokemon->pivot->user_id == Auth::id()) {
+                $pokemons1[] = $pokemon;
+            } else {
+                $pokemons2[] = $pokemon;
+            }
+        }
+        return view('replayCombat', [
+            'user1' => Auth::user(),
+            'user2' => $user2,
+            'mode' => $combat->mode,
+            'pokemons1' => $pokemons1,
+            'pokemons2' => $pokemons2
+        ]);
+
+    }
+
     public function save(Request $request)
     {
         // creating combat  row
-       $combat = Combat::create([
+        $combat = Combat::create([
             'mode' => $request->mode,
             'user_id' => $request->winner,
 //            'date' => date("Y-m-d H:i:s"),
             'status' => "finished",
         ]);
 
-       // checking if winner should upgrade level
+        // checking if winner should upgrade level
         $user = \App\Models\User::with('combatsWon')
             ->where('id', '=', $request->winner)
             ->first();

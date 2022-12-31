@@ -50,9 +50,10 @@
             energies: {!! json_encode($user2->energies, JSON_HEX_TAG) !!},
             level: '{{$user2->level}}',
         }
-        var player1Pokemons = {!! json_encode($pokemons1->toArray(), JSON_HEX_TAG) !!};
-        var player2Pokemons = {!! json_encode($pokemons1->toArray(), JSON_HEX_TAG) !!};
+        var player1Pokemons = {!! json_encode($pokemons1, JSON_HEX_TAG) !!};
+        var player2Pokemons = {!! json_encode($pokemons2, JSON_HEX_TAG) !!};
+        console.log(user,user2, player1Pokemons, player2Pokemons)
 
     </script>
-    <script src="assets/js/vendor/replayBattle.js"></script>
+    <script src="/assets/js/vendor/replayBattle.js"></script>
 @endsection

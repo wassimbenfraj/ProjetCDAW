@@ -19,7 +19,7 @@ class Combat extends Model
 
     public function pokemons()
     {
-        return $this->belongsToMany(Pokemon::class, 'combat_pokemons');
+        return $this->belongsToMany(Pokemon::class, 'combat_pokemons')->withPivot('user_id');
     }
 
     public function users()

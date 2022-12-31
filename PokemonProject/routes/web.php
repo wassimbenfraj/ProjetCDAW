@@ -45,4 +45,5 @@ Route::get('/profile', [\App\Http\Controllers\UserController::class, 'show'])->m
 
 Route::get('/combat', [\App\Http\Controllers\CombatController::class, 'index'])->middleware('auth');
 Route::post('/combat', [\App\Http\Controllers\CombatController::class, 'save'])->middleware('auth');
+Route::get('/combat/{combat}', [\App\Http\Controllers\CombatController::class, 'replay'])->middleware('auth');
 

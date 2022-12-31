@@ -71,7 +71,8 @@
             <div class="tab-content rn-bid-content" id="nav-tabContent">
                 <div class="tab-pane row g-5 d-flex fade show active" id="nav-profile" role="tabpanel"
                      aria-labelledby="nav-profile-tab">
-                    @foreach(auth()->user()->combats as $combat)
+                    <h3 id="headlineResult" class="title">Combats History</h3>
+                @foreach(auth()->user()->combats as $combat)
                         <!-- start single product -->
                         <div class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                             <div class="product-style-one no-overlay with-placeBid">
@@ -91,10 +92,10 @@
 
                                     @if($combat->users[0]->id != auth()->user()->id )
                                         <div class="last-bid"> Oponent : {{$combat->users[0]->name}}</div>
-                                        <a href="/combat" class="btn btn-primary">Replay</a>
+                                        <a href="/combat/{{$combat->id}}" class="btn btn-primary">Replay</a>
                                     @else
                                         <div class="last-bid"> Vs {{$combat->users[1]->name}}</div>                                        <a href="product-details.html" class="btn btn-primary">Place Bid</a>
-                                        <a href="/combat" class="btn btn-primary">Replay</a>
+                                        <a href="/combat/{{$combat->id}}" class="btn btn-primary">Replay</a>
                                     @endif
 
                                 </div>
