@@ -16,7 +16,7 @@
                             <li><a href="/">Accueil</a></li>
                             <li><a href="/pokemons">Pokémon</a></li>
                             <li><a href="/combat">Combats</a></li>
-                            <li><a href="contact.html">Stats</a></li>
+                            <li><a href="/stats">Stats</a></li>
                         </ul>
                         <!-- End Mainmanu Nav -->
                     </nav>
