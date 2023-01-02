@@ -37,7 +37,7 @@
                                 @csrf
                                 <div class="nuron-information">
                                     <div class="condition">
-                                        <h5 class="title">Create Your Password</h5>
+                                        <h5 class="title">Change Your Password</h5>
                                         <p class="condition">
                                             Passwords are a critical part of information and network security. Passwords
                                             serve to protect user accounts but a poorly chosen password, if compromised,
