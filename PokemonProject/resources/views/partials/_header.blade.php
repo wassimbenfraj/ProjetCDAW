@@ -94,8 +94,8 @@
     <div class="inner">
         <div class="header-top">
             <div class="logo logo-custom-css">
-                <a class="logo-light" href="index.html"><img src="/assets/images/logo/logo-white.png"></a>
-                <a class="logo-dark" href="index.html"><img src="/assets/images/logo/logo-dark.png"></a>
+                <a class="logo-light" href="/"><img src="/assets/images/logo/logo-white.png"></a>
+                <a class="logo-dark" href="/"><img src="/assets/images/logo/logo-dark.png"></a>
             </div>
             <div class="close-menu">
                 <button class="close-button">

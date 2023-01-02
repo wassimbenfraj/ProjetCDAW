@@ -28,7 +28,7 @@
                             <div class="top-seller-inner-one explore">
                                 <div class="top-seller-wrapper">
                                     <div class="thumbnail varified">
-                                        <a href="author.html"><img src="{{asset('storage/'. $user['image'])}}"
+                                        <a href="#"><img src="{{asset('storage/'. $user['image'])}}"
                                                                    alt="Nft_Profile"></a>
                                     </div>
                                     <div class="top-seller-content">
@@ -47,7 +47,7 @@
                                 </span>
                                     </div>
                                 </div>
-                                <a class="over-link" href="author.html"></a>
+                                <a class="over-link" href="#"></a>
                             </div>
                         </div>
                         <!-- End single top-seller -->
@@ -59,11 +59,11 @@
                             <div class="top-seller-inner-one explore">
                                 <div class="top-seller-wrapper">
                                     <div class="thumbnail">
-                                        <a href="author.html"><img src="{{asset('storage/'. $user['image'])}}"
+                                        <a href="#"><img src="{{asset('storage/'. $user['image'])}}"
                                                                    alt="Nft_Profile"></a>
                                     </div>
                                     <div class="top-seller-content">
-                                        <a href="author.html">
+                                        <a href="#">
                                             <h6 class="name">{{$user['name']}}</h6>
                                         </a>
                                         <span class="count-number">
@@ -77,7 +77,7 @@
                                 </span>
                                     </div>
                                 </div>
-                                <a class="over-link" href="author.html"></a>
+                                <a class="over-link" href="#"></a>
                             </div>
                         </div>
                         <!-- End single top-seller -->

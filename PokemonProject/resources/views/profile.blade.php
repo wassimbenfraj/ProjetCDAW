@@ -77,15 +77,15 @@
                         <div class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                             <div class="product-style-one no-overlay with-placeBid">
                                 <div class="card-thumbnail">
-                                    <a href="product-details.html">
+                                    <a href="#">
                                     </a>
                                 </div>
                                 <div class="product-share-wrapper">
                                 </div>
                                 @if($combat->user_id == auth()->user()->id )
-                                    <a href="product-details.html"><span class="product-name">Game Won</span></a>
+                                    <a href="#"><span class="product-name">Game Won</span></a>
                                 @else
-                                    <a href="product-details.html"><span class="product-name">Game Lost</span></a>
+                                    <a href="#"><span class="product-name">Game Lost</span></a>
                                 @endif
                                 <span class="latest-bid">{{$combat->created_at->format('j F, Y')}}</span>
                                 <div class="bid-react-area">

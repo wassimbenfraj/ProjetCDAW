@@ -45,12 +45,12 @@
                     <div class="col {{$pokemon->energy->name}}" style="margin-top: 2%">
                         <div class="product-style-one no-overlay">
                             <div class="card-thumbnail">
-                                <a href="product-details.html"><img src="{{$pokemon->image}}" alt="pokemon_image"/></a>
+                                <a href="#"><img src="{{$pokemon->image}}" alt="pokemon_image"/></a>
                             </div>
                             <div class="product-share-wrapper">
 
                             </div>
-                            <a href="product-details.html"><span class="product-name">{{$pokemon->name}}</span></a>
+                            <a href="#"><span class="product-name">{{$pokemon->name}}</span></a>
                             <span class="latest-bid">{{$pokemon->energy->name}}</span>
                             <div class="bid-react-area">
                                 <div class="last-bid">Niveau : {{$pokemon->level}}</div>

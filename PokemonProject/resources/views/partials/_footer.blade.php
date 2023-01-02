@@ -6,9 +6,9 @@
                 <div class="widget-content-wrapper">
                     <div class="footer-left">
                         <div class="logo-thumbnail logo-custom-css">
-                            <a class="logo-light" href="index.html"><img src="/assets/images/logo/logo-white.png"
+                            <a class="logo-light" href="/"><img src="/assets/images/logo/logo-white.png"
                                                                          ></a>
-                            <a class="logo-dark" href="index.html"><img src="/assets/images/logo/logo-dark.png"
+                            <a class="logo-dark" href="/"><img src="/assets/images/logo/logo-dark.png"
                                                                         ></a>
                         </div>
                         <p class="rn-footer-describe">
@@ -38,7 +38,7 @@
                     <h6 class="widget-title">Information</h6>
                     <ul class="footer-list-one">
 
-                        <li class="single-list"><a href="about.html">About Us</a></li>
+                        <li class="single-list"><a href="#">About Us</a></li>
 
                     </ul>
                 </div>

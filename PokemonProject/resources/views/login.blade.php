@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-list">
-                        <li class="item"><a href="index.html">Accueil</a></li>
+                        <li class="item"><a href="/">Accueil</a></li>
                         <li class="separator"><i class="feather-chevron-right"></i></li>
                         <li class="item current">PokéGame Login</li>
                     </ul>
