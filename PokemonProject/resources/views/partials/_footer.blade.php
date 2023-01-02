@@ -6,9 +6,9 @@
                 <div class="widget-content-wrapper">
                     <div class="footer-left">
                         <div class="logo-thumbnail logo-custom-css">
-                            <a class="logo-light" href="/"><img src="/assets/images/logo/logo-white.png"
+                            <a class="logo-light" href="/"><img src="/assets/images/pokemon/logo-white.png"
                                                                          ></a>
-                            <a class="logo-dark" href="/"><img src="/assets/images/logo/logo-dark.png"
+                            <a class="logo-dark" href="/"><img src="/assets/images/pokemon/logo-dark.png"
                                                                         ></a>
                         </div>
                         <p class="rn-footer-describe">
