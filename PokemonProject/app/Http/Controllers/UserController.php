@@ -80,6 +80,7 @@ class UserController extends Controller
     public function stats(Request $request){
         $users = \App\Models\User::with('combats')
             ->with('combatsWon')
+            ->with('energies')
             ->get();
         $users = $users->toArray();
         usort($users, function($a, $b) {return count($a['combats_won']) < count($b['combats_won']);});

@@ -32,14 +32,18 @@
                                                                    alt="Nft_Profile"></a>
                                     </div>
                                     <div class="top-seller-content">
-                                        <a href="author.html">
+                                        <a href="#">
                                             <h6 class="name">{{$user['name']}}</h6>
                                         </a>
+
                                         <span class="count-number">
                                     Combats Played : {{count($user['combats'])}}
                                 </span>
                                         <span class="count-number">
                                     Combats Won : {{count($user['combats_won'])}}
+                                </span>
+                                        <span class="count-number">
+                                    Energies : {{count($user['energies'])}}
                                 </span>
                                     </div>
                                 </div>
@@ -68,7 +72,9 @@
                                         <span class="count-number">
                                     Combats Won : {{count($user['combats_won'])}}
                                  </span>
-
+                                        <span class="count-number">
+                                    Energies : {{count($user['energies'])}}
+                                </span>
                                     </div>
                                 </div>
                                 <a class="over-link" href="author.html"></a>

@@ -90,7 +90,7 @@ function chooseMode(idMode) {
     if (idMode === 1) {
         player1Pokemons = pokemons1.slice(0, 3)
         player2Pokemons = pokemons2.slice(0, 3)
-
+        document.getElementById("timer").style.display = 'none';
         Array.from(movesSelect).forEach((moves) => {
             moves.style.display = 'none';
         });
