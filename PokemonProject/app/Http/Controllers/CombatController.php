@@ -29,7 +29,7 @@ class CombatController extends Controller
         ]);
     }
 
-    public function replay( Combat $combat)
+    public function replay(Combat $combat)
     {
 
         $pokemons1 = [];
@@ -80,9 +80,15 @@ class CombatController extends Controller
         }
 
         // adding new energy skill to winner
-        $energy = DB::table('energies')
-            ->inRandomOrder()
-            ->first();
+        do {
+            $energy = DB::table('energies')
+                ->inRandomOrder()
+                ->first();
+            $exist = DB::table('energy_users')
+                ->where('energy_id', '=', $energy->id)
+                ->first();
+        } while ($exist != null);
+
 
         EnergyUser::create([
             'user_id' => $request->winner,
