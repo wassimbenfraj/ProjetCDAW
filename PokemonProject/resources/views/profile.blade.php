@@ -94,7 +94,7 @@
                                         <div class="last-bid"> Oponent : {{$combat->users[0]->name}}</div>
                                         <a href="/combat/{{$combat->id}}" class="btn btn-primary">Replay</a>
                                     @else
-                                        <div class="last-bid"> Vs {{$combat->users[1]->name}}</div>                                        <a href="product-details.html" class="btn btn-primary">Place Bid</a>
+                                        <div class="last-bid"> Vs {{$combat->users[1]->name}}</div>
                                         <a href="/combat/{{$combat->id}}" class="btn btn-primary">Replay</a>
                                     @endif
 
