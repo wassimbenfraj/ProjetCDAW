@@ -13,12 +13,16 @@
                         dresseur ? Tu es au bon endroit !</h2>
                     <p class="slide-disc" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">Choisis ton
                         pokémon, et challenge un autre joueur dans un combat !</p>
-                    <div class="button-group">
-                        <a class="btn btn-large btn-primary" href="/login" data-sal-delay="400" data-sal="slide-up"
-                           data-sal-duration="800">Se connecter</a>
-                        <a class="btn btn-large btn-primary-alta" href="/signup" data-sal-delay="500"
-                           data-sal="slide-up" data-sal-duration="800">Créer un compte</a>
-                    </div>
+                    @auth
+                    @else
+                        <div class="button-group">
+                            <a class="btn btn-large btn-primary" href="/login" data-sal-delay="400" data-sal="slide-up"
+                               data-sal-duration="800">Se connecter</a>
+                            <a class="btn btn-large btn-primary-alta" href="/signup" data-sal-delay="500"
+                               data-sal="slide-up" data-sal-duration="800">Créer un compte</a>
+                        </div>
+                    @endauth
+
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12 offset-lg-1">
                     <div class="slider-thumbnail">
