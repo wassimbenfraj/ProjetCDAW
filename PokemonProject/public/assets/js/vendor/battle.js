@@ -533,6 +533,7 @@ function makeMoveRoundByRound(playerNumber, moveNumber, attackPoints) {
         if (round % 2 === 1) {
             if (firstPlayer === playerNumber) {
                 clearInterval(timer);
+                clearInterval(interval);
                 startTimer(playerNumber);
                 applyMove(playerNumber, moveNumber, attackPoints)
                 round++;
@@ -541,6 +542,7 @@ function makeMoveRoundByRound(playerNumber, moveNumber, attackPoints) {
         } else {
             if (firstPlayer !== playerNumber) {
                 clearInterval(timer);
+                clearInterval(interval);
                 startTimer(playerNumber);
                 applyMove(playerNumber, moveNumber, attackPoints)
                 round++;
@@ -565,15 +567,18 @@ function makeMoveRoundByRound(playerNumber, moveNumber, attackPoints) {
 function onCounterEnd(playerNumber) {
     if (indexPokemon1 > 2 || indexPokemon2 > 2) {
         clearInterval(timer);
+        clearInterval(interval);
     } else {
         round++;
         if (playerNumber === 1) {
             changeheadlineOnCombat(1);
             clearInterval(timer);
+            clearInterval(interval);
             startTimer(2);
         } else {
             changeheadlineOnCombat(2);
             clearInterval(timer);
+            clearInterval(interval);
             startTimer(1);
         }
         // if (round % 2 === 1) {
@@ -586,10 +591,11 @@ function onCounterEnd(playerNumber) {
 }
 
 var timer;
-
+var interval;
+var active;
 function startTimer(playerNumber) {
     var seconds = 31;
-
+    active = playerNumber;
     timer = setInterval(function () {
 
         seconds--;
@@ -597,12 +603,14 @@ function startTimer(playerNumber) {
 
         document.getElementById("timer").innerHTML = seconds;
 
-
         if (seconds <= 0) {
             clearInterval(timer);
+            clearInterval(interval);
             onCounterEnd(playerNumber)
         }
     }, 1000);
+    interval =  setInterval(regenerateHealth, 1000);
+
 }
 
 
@@ -649,3 +657,17 @@ function saveCombat(winnerId) {
         }
     });
 }
+
+function regenerateHealth() {
+    if (active === 1) {
+        if(currentHealth1>0 &&  currentHealth1 < health1){
+            currentHealth1 += 1;
+            updateProgressBar(1, currentHealth1, health1);
+        }
+    } else {
+        if(currentHealth2>0 &&  currentHealth2 < health2){
+            currentHealth2 += 1;
+            updateProgressBar(2, currentHealth2, health2);
+        }
+    }
+};
