@@ -30,7 +30,7 @@ ce projet est un jeu pokemon, où vous pouvez trouver toutes ces fonctionnalité
   - Mode aléatoire + Tour + tour
 - minuterie à chaque tour pour des modes spécifiques
 - Description textuelle animée pour chaque attaque
-- régénèreation automatique des points de vie
+- régénèration automatique des points de vie
 - Requêtes (Ajax) pour sauvgarde de données aprés la fin du combat 
 - Interface pour les statistiques
 - Pagination
