@@ -13,6 +13,31 @@
   </p>
 </div>
 
+## A propos ce projet
+
+ce projet est un jeu pokemon, où vous pouvez trouver toutes ces fonctionnalités:
+- naviguer la collection de pokémons à l'aide de plusieurs filtres (requêtes ajax / Javascript)
+- Inscrivez-vous en utilisant Image Upload pour les utilisateurs
+- Authentification
+- Validation des erreurs
+- Profil personnel pour l'utilisateur et consultation de l'historique des combats
+- Rejouer des les combats
+- Changement de mot de passe pour l'utilisateur
+- Modes combats en plus
+
+  - Mode aléatoire + choix automatique
+  - Mode Manuel + Tour + tour
+  - Mode aléatoire + Tour + tour
+- minuterie à chaque tour pour des modes spécifiques
+- Description textuelle animée pour chaque attaque
+- régénèreation automatique des points de vie
+- Requêtes (Ajax) pour sauvgarde de données aprés la fin du combat 
+- Interface pour les statistiques
+- Pagination
+- Appliquer un système pour assurer d'avoir assez de pokémons pour chaque utilisateur pour réaliser son premier combat
+en respectant les régles d'énergies et niveaux.
+
+
 <!-- GETTING STARTED -->
 
 ## Getting Started
