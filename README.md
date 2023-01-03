@@ -8,7 +8,7 @@
 <h3 align="center">PokéGame</h3>
 
   <p align="center">
-    Readme Project !
+    Wassim Ben Fraj & Laila Allam
     <br />
   </p>
 </div>
@@ -90,7 +90,7 @@ en respectant les régles d'énergies et niveaux.
   ```sh
   php artisan key:generate
   ```
-## Génération la base de données
+## Génération de la base de données
 
 * Si la base de données n'est pas encore  créée
 
@@ -102,7 +102,7 @@ en respectant les régles d'énergies et niveaux.
   ```sh
   php artisan migrate:refresh --seed
   ```
-
+  ### * les utilisateurs doivent êtres crées manuellment pour que chaque utilisateur puisse voir son avatar car nous travaillons sur le localhost.
 ## Exécution du projet
 
   ```sh
