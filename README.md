@@ -102,7 +102,7 @@ en respectant les régles d'énergies et niveaux.
   ```sh
   php artisan migrate:refresh --seed
   ```
-  ### * les utilisateurs doivent êtres crées manuellment pour que chaque utilisateur puisse voir son avatar car nous travaillons sur le localhost.
+  ### * les utilisateurs doivent êtres crées manuellment pour que chaque utilisateur puisse choisir et voir son avatar car nous travaillons sur le localhost.
 ## Exécution du projet
 
   ```sh
