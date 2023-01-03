@@ -68,10 +68,18 @@
 ## Génération la base de données
 
 * Si la base de données n'est pas encore  créée
+
   ```sh
   php artisan migrate --seed
   ```
 * Si la base de données est déja  créée
+
   ```sh
   php artisan migrate:refresh --seed
+  ```
+
+## Exécution du projet
+
+  ```sh
+  php artisan serve
   ```
