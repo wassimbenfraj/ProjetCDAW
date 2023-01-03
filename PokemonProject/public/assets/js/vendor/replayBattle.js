@@ -20,7 +20,9 @@ var CommentBox = document.getElementById('comment');
 
 var headline = document.getElementById('headline');
 var headlineResult = document.getElementById('headlineResult');
-
+var headlineComment = document.getElementById('headlineComment');
+//this Combat is a Replay of Older combats already played,
+// and thus it will not be displayed in history.
 
 var pokemon1Buttons = document.getElementsByClassName('pokemon1Buttons');
 var pokemon2Buttons = document.getElementsByClassName('pokemon2Buttons');
@@ -195,9 +197,12 @@ function makeMove() {
 
         if (indexPokemon1 >= 3) {
             headlineResult.innerText = `${user2.name} won the combat`;
+            headlineComment.innerText = "this Combat is a Replay of Older combats already played, and thus it will not be displayed in history.";
             // saveCombat(user2.id)
         } else {
             headlineResult.innerText = `${user.name} won the combat`;
+            headlineComment.innerText = "this Combat is a Replay of Older combats already played, and thus it will not be displayed in history.";
+
             // saveCombat(user.id)
         }
     }
@@ -222,9 +227,13 @@ function setupPokemonOnScreen(player, index) {
         gameFinished.style.display = 'block';
         if (indexPokemon1 >= 3) {
             headlineResult.innerText = `${user2.name} won the combat`;
+            headlineComment.innerText = "this Combat is a Replay of Older combats already played, and thus it will not be displayed in history.";
+
             // saveCombat(user2.id)
         } else {
             headlineResult.innerText = `${user.name} won the combat`;
+            headlineComment.innerText = "this Combat is a Replay of Older combats already played, and thus it will not be displayed in history.";
+
             // saveCombat(user.id)
         }
     }
@@ -443,9 +452,13 @@ function makeMoveRoundByRound(playerNumber, moveNumber, attackPoints) {
         gameFinished.style.display = 'block';
         if (indexPokemon1 >= 3) {
             headlineResult.innerText = `${user2.name} won the combat`;
+            headlineComment.innerText = "this Combat is a Replay of Older combats already played, and thus it will not be displayed in history.";
+
             // saveCombat(user2.id)
         } else {
             headlineResult.innerText = `${user.name} won the combat`;
+            headlineComment.innerText = "this Combat is a Replay of Older combats already played, and thus it will not be displayed in history.";
+
             // saveCombat(user.id)
         }
     }

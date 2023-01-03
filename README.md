@@ -1,24 +1,77 @@
-readme
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="#">
+    <img src="PokemonProject/public/assets/images/pokemon/logo-white.png" alt="Logo" >
+  </a>
 
-ouvrir le terminal
+<h3 align="center">PokéGame</h3>
 
-cloner le projet a travers github
-git clone https://github.com/wassimbenfraj/ProjetCDAW.git
+  <p align="center">
+    Readme Project !
+    <br />
+  </p>
+</div>
 
-aller au dossier du projet
-cd .\PokemonProject\
+<!-- GETTING STARTED -->
 
-générer les fichiers laravel
-composer install
+## Getting Started
 
+* Cloner le projet à travers github
+  ```sh
+  git clone https://github.com/wassimbenfraj/ProjetCDAW.git
+  ```
+* aller au dossier du projet
+  ```sh
+  cd .\ProjetCDAW\
+  ```
+  
+* aller au dossier 
+  ```sh
+  cd .\PokemonProject\
+  ```
+## Installation
 
-générer le fichier .env
-cp .env.example .env
+* générer les fichiers laravel
 
-créer une base de données appelé
+  ```sh
+  composer install
+  ```
 
-cdaw
+## Préparation d'environement
 
-modifier .env en changeant le nom de base de données
+* générer le fichier .env
+  ```sh
+  cp .env.example .env
+  ```
 
-"DB_DATABASE=cdaw"
+* créer une base de données appelé
+  ```sh
+  cdaw
+  ```
+
+* modifier le fichier <strong>.env </strong> en changeant le nom de base de données
+  ```sh
+  "DB_DATABASE=cdaw"
+  ```
+### Prérequis
+
+* Les images téléchargées dans ce projet sont sauvegardées dans le dossier storage, laravel n'a pas accès par défaut à ce dossier, et pour pouvoir afficher les images, il faut exécuter cetter commande.
+  ```sh
+  php artisan storage:link
+  ```
+
+* exécuter la commande qui définit la valeur APP_KEY dans votre fichier .env 
+  ```sh
+  php artisan key:generate
+  ```
+## Génération la base de données
+
+* Si la base de données n'est pas encore  créée
+  ```sh
+  php artisan migrate --seed
+  ```
+* Si la base de données est déja  créée
+  ```sh
+  php artisan migrate:refresh --seed
+  ```
