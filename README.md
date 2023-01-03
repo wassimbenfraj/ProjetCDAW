@@ -17,7 +17,7 @@
 
 ce projet est un jeu pokemon, où vous pouvez trouver toutes ces fonctionnalités:
 - naviguer la collection de pokémons à l'aide de plusieurs filtres (requêtes ajax / Javascript)
-- Inscrivez-vous en utilisant Image Upload pour les utilisateurs
+- Inscription en utilisant Image Upload pour les utilisateurs
 - Authentification
 - Validation des erreurs
 - Profil personnel pour l'utilisateur et consultation de l'historique des combats
